@@ -1,0 +1,57 @@
+<html>
+<head>
+  
+  <title>Feedback Form</title>
+ <style>
+	button{
+    background-color: rgb(189, 73, 149);
+	width:110px;
+	color: white;
+	text-decoration: bold;
+
+	}
+	fieldset{
+	width: 60%;
+	background-color:white;
+	justify-self: center;
+	border-radius: .5em;
+	margin: 50px;
+	}
+	body{
+	background-color:rgb(40, 99, 90);
+	}
+</style>
+  
+</head>
+<body background="con.jpg">
+<fieldset>
+  <div align="center" class="container">
+    <h2 style="color:purple">Feedback</h2>
+    <p>Please write your feedback below:</p>
+
+    <form method="post">
+      How do you rate your overall experience?<br>
+      <div class="rating">
+        <input type="radio" name="rating" value="bad"> Bad
+        <input type="radio" name="rating" value="average"> Average
+        <input type="radio" name="rating" value="good"> Good<br><br>
+      </div>
+
+      
+      Full Name*<input type="text" name="name" placeholder="Enter your Full name"><br><br>
+
+      Email*<input type="email"  name="email" placeholder="Enter your Email" ><br><br>
+
+      Age*<input type="number" name="age" placeholder="Enter your Age" ><br><br>
+
+      Phone*<input type="text" name="phone" placeholder="Enter your Phone number"><br><br>
+
+      Message*<textarea id="message" name="message" placeholder="Enter your message"></textarea><br><br>
+
+      <button type="submit">Submit</button>
+	  
+    </form>
+  </div>
+</fieldset>
+</body>
+</html>
