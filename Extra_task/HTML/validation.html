@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>form</title>
+	</head>
+	<body>
+	<div align="center" "width:33.33%" "float=left">
+	<fieldset>
+	    <legend align="center"><b>Validation_form</b></legend><br>
+		<form method="post">
+		
+			First Name: <input type="text" name="f_name" required> <br><br>
+			
+			Quantity <input type="number" name="Quantity" required min="1" max="5"> <br><br>
+			
+			DOB <input type="date" name="date" required max="2000-04-01"> <br><br>
+			
+			Appointment date <input type="date" name="date" required min="2025-04-19"> <br><br>
+			
+			Password : <input type="password" name="password" required minlength="8" maxlength="12"> <br><br>
+			
+			Email: <input type="email" name="email" required> <br><br>
+			
+			Name: <input type="text" name="name" required pattern="[a-zA-Z]+"  title="ADD ALPHA"> <br><br>
+			
+			Mobile: <input type="number" name="number" required pattern="[0-9]{10}"  title="ADD mobile"> <br><br>
+			
+		
+			<input type="submit" name="submit" value="Register">
+	</div>
+	</body>
+</html>
