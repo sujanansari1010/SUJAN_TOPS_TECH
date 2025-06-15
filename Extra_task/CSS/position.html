@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <style>
+        .static {
+              width:200px;
+              background-color:red;	
+              position: static;
+              border: 3px solid #73AD21;
+    }
+
+
+        .static1 {
+              width:200px;
+             background-color:red;	
+              position: static;
+              border: 3px solid #73AD21;
+    }
+
+    .relative {
+             width:200px;
+             background-color:green;	
+             border: 3px solid yellow;
+             position:relative;  /* left  top  bottom  right */
+             top:20px;
+             left:20px;
+}
+
+
+
+        </style>
+    </head>
+    <body>
+
+            <p>An element with position: static; is not positioned in any special way; it is 
+    always positioned according to the normal flow of the page:</p>
+
+
+       <div class="static">
+            This div element has position: static1;
+        </div>
+
+        <div class="relative">
+              This div element has position: relative;
+        </div>
+
+        <div class="static1">
+             This div element has position: static1;
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Amazon Header</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    .header {
+      background-color: #131921;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      justify-content: space-between;
+    }
+    .logo {
+      font-size: 24px;
+      font-weight: bold;
+      color: #FF9900;
+    }
+    .search-bar {
+      flex: 1;
+      margin: 0 20px;
+    }
+    .search-bar input {
+      width: 100%;
+      padding: 8px;
+      border: none;
+      border-radius: 4px;
+    }
+    .nav-options {
+      display: flex;
+      gap: 20px;
+    }
+    .nav-options div {
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo">amazon.in</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Amazon">
+    </div>
+    <div class="nav-options">
+      <div>
+        <div>Hello, Sign in</div>
+        <div><strong>Account & Lists</strong></div>
+      </div>
+      <div>
+        <div>Returns</div>
+        <div><strong>& Orders</strong></div>
+      </div>
+      <div>
+        <div>🛒</div>
+        <div><strong>Cart</strong></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

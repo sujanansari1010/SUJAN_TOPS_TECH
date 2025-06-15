@@ -1,0 +1,34 @@
+/*
+		h1 { color:green;background-color:yellow }
+		h2 { color:green;background-color:yellow }
+		h3 { color:green;background-color:yellow }
+		*/
+		
+		/* grouping css */
+		
+		h1,h2,h3 { color:green;background-color:yellow }
+	
+	
+		/* WE CREATE OUR OWN STYLE*/
+		
+		.myA{ color:blue;background-color:green;text-align:center}
+		#myB{ color:pink;background-color:red;text-align:right}
+	
+		
+		.underline{
+			text-decoration:underline;
+		}
+		
+		.upper{
+			text-transform:uppercase;
+		}
+	
+		
+		h4.test {
+			background-color:purple;
+		}
+		
+		.demo h5{
+			background-color:orange;
+		}
+	

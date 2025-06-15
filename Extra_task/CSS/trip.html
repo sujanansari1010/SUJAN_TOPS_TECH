@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .row {
+            display: flex;
+      
+        }
+
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%
+        }
+
+        .col-4 {
+            width: 33.33%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
+        .col-8 {
+            width: 66.66%
+        }
+
+        .col-9 {
+            width: 75%
+        }
+
+        .col-10 {
+            width: 83.33%
+        }
+
+        .col-11 {
+            width: 91.66%
+        }
+
+        .col-12 {
+            width: 100%
+        }
+
+
+
+
+
+        .navbar {
+            width: 65%;
+            height: 100px;
+            background-color: rgb(249, 249, 240);
+            position: sticky;
+            top: 0px;
+            margin-left: 300px;
+            margin-top: 80px;
+            display: flex;
+            border-radius: 10px;
+            border: solid 3px;
+            z-index: 15;
+            text-align: center;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: rgb(150, 31, 31);
+            padding: 20px;
+            text-decoration: none;
+
+        }
+
+        .navbar a:hover {
+            background-color: rgb(147, 72, 72);
+            color: white;
+        }
+
+        .mainbar {
+            height: 510px;
+            width: 80%;
+            background-color: rgb(222, 232, 217);
+            border-radius: 10px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            z-index: 5px;
+            padding: 80px;
+            font-size: large;
+
+
+        }
+
+        .button {
+            background-color: #04AA6D;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            position: absolute;
+            top: 690px;
+            left: 750px;
+            border-radius: 10px;
+            background-color: #693ac7;
+        }
+
+        .menu {
+            border: solid 1px;
+            border-radius: 10px;
+            margin: 1px;
+        }
+
+        .header1 {
+
+            height: 60px;
+            position: sticky;
+            top: 50px;
+            display: flex;
+            color: white;
+            z-index: 20;
+
+
+        }
+
+        .wp {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 25;
+        }
+
+        .plan {
+            position: relative;
+            top: 480px;
+        }
+        .footer{
+           background-color: rgb(90, 83, 83);
+            height: 250px;
+            width: 100%;
+            padding-left: 90px;
+            padding-top: 90px;
+            display: flex;
+            gap: 30px;
+            color: white;
+            margin-top: 50px;
+
+        }
+        .footer span{
+            padding-left: 700px;
+            padding-top: 50px;
+        }
+        .mm{
+            height: auto;
+            position: absolute;
+            top: 0px;
+            z-index: -1;
+        }
+        .aa{
+            border: solid 1px;
+            border-radius: 10px;
+            text-align: center;
+            margin-right: 5px;
+        }
+        
+    </style>
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+
+    <div class="header1">
+        <img src="mytrip.jpeg">
+
+    </div>
+
+    <div class="navbar">
+        <a href="#"> <i class="fa-solid fa-plane-departure"></i><br>Flight</a>
+        <a href="#"> <i class="fa-solid fa-hotel"></i><br>Hotel</a>
+        <a href="#"> <i class="fa-solid fa-house-laptop"></i><br>Homestay & villas</a>
+        <a href="#"> <i class="fa-solid fa-gift"></i><br>Holiyday package</a>
+        <a href="#"> <i class="fa-solid fa-train"></i><br>Trains</a>
+        <a href="#"> <i class="fa-solid fa-bus"></i><br>Buses</a>
+        <a href="#"> <i class="fa-solid fa-car"></i><br>Cabs</a>
+        <a href="#"> <i class="fa-solid fa-passport"></i><br>Visa</a>
+        <a href="#"> <i class="fa-solid fa-credit-card"></i><br>ForexCards & Currency</a>
+        <a href="#"> <i class="fa-solid fa-globe"></i><br>Travel Insurance</a>
+
+    </div>
+
+    <div class="mainbar">
+        <input type="radio" name="male" >One Way
+        <input type="radio" name="male">Round Trip
+        <input type="radio" name="male">Multi City
+        <P align="right">Book International and Domestic Flights</P>
+
+
+        <div class="row">
+            <div class="col-3 menu">
+                <h5>from</h5>
+                <h1>Delhi</h1>
+                <h3> DEL, Delhi Airport India</h3>
+            </div>
+            <div class="col-3 menu">
+                <h5>To</h5>
+               
+                <h1>Bengaluru</h1>
+                <h3> BLR, Bengaluru International Airport</h3>
+            </div>
+            <div class="col-3 menu">
+                <h5>Departure</h5>
+                <h1>15 Jun'25</h1>
+                <h3> Sunday</h3>
+            </div>
+            <div class="col-3 menu">
+                <h5>Return</h5>
+                <h1>16 Jun'25</h1>
+                <h3>Monday</h3>
+            </div>
+             <div class="col-3 menu">
+                <h5>Travellers & Class</h5>
+                <h1>1 Traveller</h1>
+                <h3>Economy/Premium Economy</h3>
+            </div>
+           
+        </div><br>
+         <div class="row">
+            <div>
+                <p>Select a special fare</p>
+                <b><p>EXTRA SAVINGS</p></b>
+
+            </div>
+            <div class="col-2 aa">
+                 <input type="radio" name="male" >Regular
+                 <p>Regular fares</p>
+            </div>
+            <div class="col-2 aa">
+                 <input type="radio" name="male">Student
+                 <p>Extra discounts/baggage</p>
+            </div>
+             <div class="col-2 aa">
+                 <input type="radio" name="male">Senior Citizen
+                 <p>Up to ₹ 600 off/</p>
+            </div>
+               <div class="col-2 aa">
+                 <input type="radio" name="male"> Armed Forces
+                 <p>Up to ₹ 600 off</p>
+            </div>
+            <div class="col-2 aa">
+                <input type="radio" name="male">Doctor and Nurses
+                <p>Up to ₹ 600 off</p>
+            </div>
+        </div>
+    </div><br><br>
+
+
+    <div class="Search">
+        <button class="button">Search</button>
+    </div>
+
+    <div class="wp">
+        <img src="wp.jpeg" width="100px">
+    </div>
+
+    <div class="plan">
+        <img src="plan.png" width="100%">
+        
+    <div class="footer">
+        
+            <h1><i class="fa-brands fa-instagram"></i></h1>
+            <h1><i class="fa-brands fa-x-twitter"></i></h1>
+            <h1><i class="fa-brands fa-linkedin"></i></h1>
+           <h1><i class="fa-brands fa-facebook"></i></h1>
+           <span>© 2025 MAKEMYTRIP PVT. LTD.</span>
+    
+    </div>
+
+    </div>
+    <div class="mm">
+        <img src="mountan.jpeg" width="120%" height="750px">
+    </div>
+</body>
+
+</html>

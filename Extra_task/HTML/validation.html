@@ -1,11 +1,26 @@
 <html>
 	<head>
 		<title>form</title>
+		<style>
+	fieldset{
+	width: 100%;
+    justify-self: center;
+    background-color: rgb(108, 221, 155);
+    border-radius: .5em;
+    margin: 10px;
+    }
+    div{
+    display: flex;
+    max-width: 700px;
+    margin: auto;
+    }
+</style>
+		<h1 align="center" style="background-color:blue;color:pink;text-align:center"> Validation Form </h1>
 	</head>
 	<body>
 	<div align="center" "width:33.33%" "float=left">
 	<fieldset>
-	    <legend align="center"><b>Validation_form</b></legend><br>
+
 		<form method="post">
 		
 			First Name: <input type="text" name="f_name" required> <br><br>
@@ -26,6 +41,7 @@
 			
 		
 			<input type="submit" name="submit" value="Register">
+			</fieldset>
 	</div>
 	</body>
 </html>
