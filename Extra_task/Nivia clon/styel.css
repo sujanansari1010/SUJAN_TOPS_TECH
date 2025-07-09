@@ -1,0 +1,231 @@
+
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+
+        .row1 {
+            display: flex;
+
+            padding: auto;
+        }
+
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%
+        }
+
+        .col-4 {
+            width: 33.33%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
+        .col-8 {
+            width: 66.66%
+        }
+
+        .col-9 {
+            width: 75%
+        }
+
+        .col-10 {
+            width: 83.33%
+        }
+
+        .col-11 {
+            width: 91.66%
+        }
+
+        .col-12 {
+            width: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .nav {
+            height: 60px;
+            text-indent: 50px;
+            display: flex;
+
+
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            padding-top: 20px;
+            padding-left: 5px;
+
+        }
+
+        .nav a:hover {
+            color: red;
+        }
+
+        .icon {
+            font-size: 20px;
+            padding-top: 18px;
+            padding-left: 35px;
+
+        }
+
+        .icon i {
+            margin-right: -15px;
+        }
+
+
+        .sport {
+            display: flex;
+            margin-left: 10px;
+            height: 500px;
+            margin-top: 50px;
+
+        }
+
+        .sport img {
+            margin-right: 20px;
+        }
+
+        .main {
+
+            margin-top: 150px;
+            margin-left: 30px;
+        }
+
+        .main img {
+            margin-top: -30px;
+
+        }
+
+        .ck{
+            display: flex;
+            margin-top: 70px;
+            padding: 20px 15px;
+
+        }
+        .ck img{
+            margin-right: 15px;
+        }
+        .banner{
+            margin-top: 30px;
+        }
+        .team{
+            margin-top: 35px;
+        }
+        .team h1{
+            text-align: center;
+            margin-bottom: 40px;
+            
+        }
+        .team img{
+            border: 0px solid;
+            border-radius: 5px;
+            margin-left: 70px;
+            box-shadow: 5px 5px 10px black;
+        }
+        .team img:hover{
+            box-shadow: 5px 5px 10px red;
+        }
+
+        .insta{
+            text-align: center;
+            margin-top: 100px;
+
+        }
+        .ads{
+            display: flex;
+           
+            
+        }
+        .ads video{
+            margin-right: 10px;
+        }
+
+        .footer{
+            background-color: black;
+            color: white;
+            display: flex;
+            margin-bottom: -10px;
+           
+
+        }
+        .icn{
+            margin-top: 50px;
+            display: flex;
+            justify-content: start;
+            font-size: 30px;
+        }
+        .icn p{
+            margin-left: 15px;
+        }
+        footer i{
+            font-size: 35px;
+            
+
+        }
+        .footer i:hover{
+            transform: scale(1.2);
+        }
+        .footer h2{
+            max-resolution: 5px 15px;
+        }
+        footer p{
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        ul li{
+            list-style-type: none;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            text-align: left;
+            cursor: pointer;
+        }
+        .footer1{
+             background-color: black;  
+            height: auto;
+            margin-top: -10px;
+
+        }
+        .footer1 img{
+            margin-left: 20px;
+            margin-top: 10px;
+                   
+        }
+        .footer1 span{
+            color: white;
+            margin-left: 1020px;
+        }
+            
+
+       

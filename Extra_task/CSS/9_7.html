@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: #d0ebf2;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Main Container */
+        .contact-container {
+            width: 80%;
+            margin: 50px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        /* Heading */
+        .heading {
+            text-align: left;
+            color: #006d91;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        /* Address Section */
+        .address-box {
+            background-color: #f2f2f2;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .left {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .contact-details {
+            color: #006d91;
+        }
+
+        /* Form and Map Layout */
+        .form-map {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        form {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        /* Inputs */
+        .input-box {
+            width: 48%;
+            padding: 10px;
+            margin: 5px 1%;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .textarea-box {
+            width: 98%;
+            height: 100px;
+            margin: 5px 1%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Send Button */
+        .send-btn {
+            background-color: #d44d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 1%;
+            cursor: pointer;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        /* Google Map */
+        iframe {
+            flex: 1;
+            min-width: 300px;
+            height: 300px;
+            border: 1px solid #ccc;
+        }
+
+        /* Social Icons */
+        .social-icons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <div class="contact-container">
+        <h2 class="heading">contact us</h2>
+
+        <!-- Address Block -->
+        <div class="address-box">
+            <div class="left">
+                <strong>address :</strong><br>
+                saint marco street, 6th floor, tokyo, japan, 123456.<br><br>
+                <span class="contact-details">📞 +91 1234567890<br>
+                    📧 example@gmail.com</span>
+            </div>
+            <div class="right">📍</div>
+        </div>
+
+        <!-- Contact Form and Google Map -->
+        <div class="form-map">
+            <form id="contact-form">
+                <input type="text" id="name" class="input-box" placeholder="name :" required>
+                <input type="text" class="input-box" placeholder="company :" required>
+                <input type="email" id="email" class="input-box" placeholder="email :" required>
+                <input type="tel" id="mobile" class="input-box" placeholder="mobile :" required>
+                <textarea id="message" class="textarea-box" placeholder="message :" required></textarea>
+                <br>
+                <button type="submit" class="send-btn">send</button>
+            </form>
+
+            <!-- Embedded Google Map -->
+            <iframe src="https://www.google.com/maps?q=Malet%20St,%20London%20WC1E%207HU,%20UK&output=embed"
+                allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="social-icons">
+            <a href="#">📘</a>
+            <a href="#">🐦</a>
+            <a href="#">🔗</a>
+            <a href="#">💻</a>
+        </div>
+    </div>
+
+</body>
+
+</html>
