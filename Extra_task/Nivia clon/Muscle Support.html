@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,7 @@
     <style>
         .row {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
 
 
@@ -82,17 +81,13 @@
             height: 60px;
             text-indent: 50px;
             display: flex;
-
-
         }
-
         .nav a {
             text-decoration: none;
             color: black;
             text-align: center;
             padding-top: 20px;
             padding-left: 5px;
-
         }
 
         .nav a:hover {
@@ -109,12 +104,10 @@
         .icon i {
             margin-right: -15px;
         }
-
         aside {
             position: sticky;
             top: 0;
         }
-
         .cate {
             display: flex;
             justify-content: space-between;
@@ -131,46 +124,51 @@
         }
 
         .se {
-         
             justify-content: space-between;
             font-weight: 400px;
-            margin-left: 20px;
+            margin-left: -5px;
+            margin: 3px 0px;
             height: 250px;
             overflow-x: auto;
         }
-        .Size{
-            display: flex;
-            justify-content: space-between;
-            font-weight: 400;
-           
-        }
-        .size span{
-            margin-right: 20px;
-            margin-left: 20px;
-        }
+
         .se span {
-            margin-right: 200px;
+            margin-right: 250px;
+        }
+        .Price button{
+            padding: 25px;
+            margin-top: 10px;
+            height: 15px;
+            margin: 10px;
+            padding-top: 10px;
+            margin-left: 40px;
+        }
+        .Price button:hover{
+            background-color: black;
+            color: white;
+        }
+        .ml {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-left: 10px;
         }
 
-        .main {
-            float: left;
-            width: 30%;
-            height: 400px;
-            padding: 20px 15px;
-           
-        }
-        .main p{
-            padding-top: -22px;
+        .product {
+            border: 1px solid #eee;
+            padding: 10px;
+            position: relative;
             text-align: center;
         }
-        .main h3{
-            text-align: center;
-            padding-bottom: -10px;
+
+        .product img {
+            max-width: 100%;
+            height: auto;
         }
-        .main img:hover{
+        .product img:hover{
             transform: scaleX(-1);
         }
-        .main button{
+         .product button{
             visibility:hidden;
             background-color: black;
             color: white;
@@ -179,27 +177,9 @@
             width: 300px;
             height: 40px;
         }
-        .main:hover button{
+        .product:hover button{
             visibility: visible;
         }
-        .prc{
-            margin-top: 50px;
-            font-size: 30px;
-        }
-        .prc button{
-            padding-right: 10px;
-            margin-right: 40px;
-            height: 30px;
-            width: 80px;
-            font-size: 15px;
-            font-family: fantasy;
-            margin-top: 10px;
-        }
-        .prc span{
-            padding-right: 10px;
-            padding-left: 5px;
-        }
-        
         .footer{
             background-color: black;
             color: white;
@@ -225,7 +205,7 @@
         .footer i:hover{
             transform: scale(1.2);
         }
-        .footer h2{
+         .footer h2{
             max-resolution: 5px 15px;
         }
         footer p{
@@ -251,41 +231,31 @@
             margin-top: 10px;
                    
         }
-        .footer1 span{
+            .footer1 span{
             color: white;
             margin-left: 1020px;
         }
-        .asid{
-            position: sticky;
-            top: 40px;
-            align-self: flex-start;
-            background: #fff;
-            z-index: 10;
-        }
-    
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-
 <body>
-    <header>
+     <header>
         <div class="row">
             <div class="col-12 header">
                 <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
             </div>
         </div>
     </header>
-
-    <nav>
+     <nav>
         <div class="row">
             <div class="col-12 nav">
                 <img src="img/Nivia-Logo-Black-SVG_2_1.svg" alt="" srcset="" width="100px">
 
-                <a href="#">ALL SPORT</a>
+                <a href="allsport.html">ALL SPORT</a>
                 <a href="apperal.html">APPERAL</a>
                 <a href="footware.html">FOOTWARE</a>
                 <a href="fitness.html">FITNESS</a>
-                <a href="Muscle Support.html">MUSCLE SPORT</a>
+                <a href="#">MUSCLE SPORT</a>
                 <a href="Accessories.html">ASSESORIES</a>
                 <a href="#" style="color: red;">OFFERS</a>
                 <a href="#">CLUBS</a>
@@ -295,141 +265,150 @@
                     <i class="fa-regular fa-user"></i>
                     <i class="fa-solid fa-bag-shopping"></i>
                 </div>
-
             </div>
         </div>
     </nav>
-<br>
-    <h3>All Sport</h3>
 
-    
-        <div class="row">
-            <div class="col-3 asid ">
+     <div class="row">
+        <div class="col-12 banner">
+            <img src="img/GYM_Category_banners1.jpg" width="100%">
+        </div>
+    </div>
+    <br>
+    <h2>Muscle > Support</h2><br><br>
+    <div class="row">
+        <div class="col-3 asid">
+            <aside class="sidebar">
                 <h1 style="text-align: center;">Category</h1>
                 <hr>
-
-                <div class="scr">
-                    <p class="cate">All Sport<span>(558)</span></p>
-                    <p class="cate">Football<span>(108)</span></p>
-                    <p class="cate">Turf<span>(34)</span></p>
-                    <p class="cate">BasketBall<span>(42)</span></p>
-                    <p class="cate">VOLLYBALL<span>(31)</span></p>
-                    <p class="cate">Badminton<span>(13)</span></p>
-                    <p class="cate">Cricket<span>(26)</span></p>
-                    <p class="cate">Ruuning<span>(32)</span></p>
-                    <p class="cate">Kabbaddi<span>(50)</span></p>
-                    <p class="cate">Kho Kho<span>(75)</span></p>
-                    <p class="cate">Baseball<span>(90)</span></p>
-                    <p class="cate">Tennis<span>(20)</span></p>
+                    <div class="scr">
+                    <p class="cate">Muscle Support<span>(30)</span></p>
+                    <p class="cate">wrist Support<span>(9)</span></p>
+                    <p class="cate">Feet & Ankle<span>(8)</span></p>
+                    <p class="cate">Knee & Thigh<span>(14)</span></p>
+                    <p class="cate">Elbow & Back<span>(9)</span></p>
+                    <p class="cate">Basic Write Support<span>(13)</span></p>
+                    <p class="cate">Adjustable Ankel Support<span>(26)</span></p>
+                    <p class="cate">Posture Corrector<span>(32)</span></p>
+                    <p class="cate">Calf Camaparision<span>(50)</span></p>
+                    <p class="cate">Knee Warp<span>(75)</span></p>
+                    <p class="cate">Support<span>(90)</span></p>
+                    <p class="cate">Waist Support<span>(20)</span></p>
                 </div>
-
-                <h1 style="text-align: center;">Size</h1>
+                 <h1 style="text-align: center;">Size</h1>
                 <hr>
-                <div class="se">
-                    <p class="Size"><span><input type="checkbox" name="n1">1</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">2</span>(18)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">3</span>(55)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">4</span>(78)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">5</span>(87)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">6</span>(56)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">7</span>(67)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">8</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">9</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">10</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">11</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">12</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">13</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">14</span>(19)</p>
+                    <div class="se">
+                        <p class="Size"><span><input type="checkbox" name="n1">L to XL</span>(1)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">S to M</span>(18)</p>
+                        <p class="Size"><span><input type="checkbox" name="">S to XL</span>(55)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">Free size</span>(78)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">L</span>(87)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">M</span>(56)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">Regular</span>(67)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">X</span>(19)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">XL</span>(19)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">XXL</span>(19)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">XXXL</span>(19)</p>
                 </div>
-                <div class="prc">
-                    <p style="text-align: center;">price (₹)</p>
-                    <hr>
-                    <button><span>$</span>10</button>
-                    <button><span>$</span>43,999</button>
-                </div>
-            </div>
-        
-        <div class="col-9 gg">
-            <div class="main">
-             
-                <img src="img/nivia digger.jpeg" alt="" srcset="" width="100%">
-                <h3>Nivia Dagger Men's Football Studs</h3>
-                <p> ₹ 1,799 <del>₹ 1,999</del> <span>10% Off</span></p>
-                <button>Add To Cart+</button>
-            </div>
 
-            <div class="main">
-                <img src="img/safari men's shoes.jpeg" alt="" srcset="" width="100%">
-                <h3>Safari Men's Football Shoes</h3>
-                <p style="color: red;">price ₹ 1,499</p>
-                <button>Add To Cart+</button>
-            </div>
+                 <h1 style="text-align: center;">Price (₹)</h1>
+                <hr>
 
-            <div class=" main">
-                <img src="img/nivia cirk.jpeg" alt="" srcset="" width="100%">
-                <h3>Nivia Crick - 1000 2.0 Cricket Shoes</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
-              <div class=" main">
-                <img src="img/oslar.jps" alt="" srcset="" width="100%">
-                <h3>Oslar - 1000 2.0</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
-              <div class=" main">
-                <img src="img/Encounter.jpg" alt="" srcset="" width="100%">
-                <h3> Encounter - 1000 2.0 Cricket Shoes</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
-              <div class=" main">
-                <img src="img/hy-badminton.jpg" alt="" srcset="" width="100%">
-                <h3>Nivia Crick - 1000 2.0 Cricket Shoes</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
-              <div class=" main">
-                <img src="img/classic football stockings.jpg" alt="" srcset="" width="100%">
-                <h3>classic football stockings</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
-              <div class=" main">
+                <div class="Price">
+                    <button>140</button>
+                         <span> - </span>
+                    <button>1350</button>
+                    
+                </div> 
+            </aside>
+        </div>
+        <div class="c0l-9 ml">
+             <div class="product">
                 <img src="img/orthopedic basic wrist thumb support.jpg" alt="" srcset="" width="100%">
                 <h3>orthopedic basic wrist thumb support</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
+                <p style="color: red;">price ₹ 199</p>
+                <button>Add To Cart+</button>  
+            </div>
+            <div class="product">
+                 <img src="img/Weight Lifting Wrist Support(Pair).jpg" alt="" srcset="" width="100%">
+                <h3>Weight Lifting Wrist Support(Pair)</h3>
+                <p style="color: red;">price ₹ 290</p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
-                <img src="img/nivia trainer jump rope.jpg" alt="" srcset="" width="100%">
-                <h3>nivia trainer jump rope</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
+            <div class="product">
+                 <img src="img/Orthopedic Elbow Support.jpg" alt="" srcset="" width="100%">
+                <h3>Orthopedic Elbow Support</h3>
+                <p style="color: red;">price ₹ 220</p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
-                <img src="img/ballnivia.jpg" alt="" srcset="" width="100%">
-                <h3>Basket Ball Nivia</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
+            <div class="product">
+                 <img src="img/Nivia Basic Ankle Support,Ankle Sleeves.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia Basic Ankle Support,Ankle Sleeves</h3>
+                <p style="color: red;">price ₹ 140</p>
                 <button>Add To Cart+</button>
             </div>
-             
-             <div class=" main">
-                <img src="img/homepage football.jpg" alt="" srcset="" width="100%">
-                <h3>homepage football</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
+            <div class="product">
+                 <img src="img/Nivia Ankle Sleeves,Braces or Wraps.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia Ankle Sleeves,Braces or Wraps</h3>
+                <p style="color: red;">price ₹ 199</p>
                 <button>Add To Cart+</button>
             </div>
-             <div class=" main">
-                <img src="img/World fest football.jpg" alt="" srcset="" width="100%">
-                <h3>homepage football</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
+            <div class="product">
+                 <img src="img/Orthopedic Knee Support Adjustable.jpg" alt="" srcset="" width="100%">
+                <h3>Orthopedic Knee Support Adjustable</h3>
+                <p style="color: red;">price ₹ 415</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/Orthopedic Performance Waist Support.jpg" alt="" srcset="" width="100%">
+                <h3>Orthopedic Performance Waist Support</h3>
+                <p style="color: red;">price ₹ 520</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/Posture Corrector.jpg" alt="" srcset="" width="100%">
+                <h3>Posture Corrector</h3>
+                <p style="color: red;">price ₹ 549</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/Orthopedic Shoulder Support With Velcro.jpg" alt="" srcset="" width="100%">
+                <h3>Orthopedic Shoulder Support With Velcro</h3>
+                <p style="color: red;">price ₹ 1,350</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/Nivia Vollyball Knee Support With PU Form Pad,Knee Braces.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia Vollyball Knee Support With PU Form Pad,Knee Braces</h3>
+                <p style="color: red;">price ₹ 799</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/Nivia Ankle Support With Closed Heel.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia Ankle Support With Closed Heel</h3>
+                <p style="color: red;">price ₹ 300</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/Basic Elboe Suppot 2.0.jpg" alt="" srcset="" width="100%">
+                <h3>Basic Elboe Suppot 2.0</h3>
+                <p style="color: red;">price ₹ 230</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/Orthopedic Performance Waist Support.jpg" alt="" srcset="" width="100%">
+                <h3>Orthopedic Performance Waist Support</h3>
+                <p style="color: red;">price ₹ 520</p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/orthopedic basic wrist thumb support.jpg" alt="" srcset="" width="100%">
+                <h3>orthopedic basic wrist thumb support</h3>
+                <p style="color: red;">price ₹ 199</p>
                 <button>Add To Cart+</button>
             </div>
         </div>
-        </div>
-    
-
+    </div>
     <!---------footer--------->
    
 
@@ -490,7 +469,5 @@
             <span>© 2024 Niviasports, All Rights Reserved</span>
         </div>
     </div>
-
 </body>
-
 </html>

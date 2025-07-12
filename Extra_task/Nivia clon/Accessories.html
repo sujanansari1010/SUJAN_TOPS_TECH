@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+
+        .row1 {
+            display: flex;
+
+            padding: auto;
+        }
+
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%
+        }
+
+        .col-4 {
+            width: 33.33%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
+        .col-8 {
+            width: 66.66%
+        }
+
+        .col-9 {
+            width: 75%
+        }
+
+        .col-10 {
+            width: 83.33%
+        }
+
+        .col-11 {
+            width: 91.66%
+        }
+
+        .col-12 {
+            width: 100%
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .nav {
+            height: 60px;
+            text-indent: 50px;
+            display: flex;
+        }
+        .nav a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            padding-top: 20px;
+            padding-left: 5px;
+        }
+
+        .nav a:hover {
+            color: red;
+        }
+
+        .icon {
+            font-size: 20px;
+            padding-top: 18px;
+            padding-left: 35px;
+
+        }
+
+        .icon i {
+            margin-right: -15px;
+        }
+         aside {
+            position: sticky;
+            top: 0;
+        }
+
+        .cate {
+            display: flex;
+            justify-content: space-between;
+            margin-left: 20px;
+        }
+
+        .cate span {
+            margin-right: 20px;
+        }
+          .src {
+            height: 250px;
+            overflow-x: auto;
+        }
+         .se {
+         
+            justify-content: space-between;
+            font-weight: 400px;
+            margin-left: 20px;
+            height: 250px;
+            overflow-x: auto;
+        }
+
+        .se span {
+            margin-right: 250px;
+        }
+        .Price button{
+            padding: 25px;
+            margin-top: 10px;
+            height: 15px;
+            margin: 10px;
+        }
+        .Price button:hover{
+            background-color: black;
+            color: white;
+        }
+        .al {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-left: 10px;
+        }
+
+        .product {
+            border: 1px solid #eee;
+            padding: 10px;
+            position: relative;
+            text-align: center;
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product img:hover{
+            transform: scaleX(-1);
+        }
+        .product button{
+            visibility:hidden;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 300px;
+            height: 40px;
+        }
+        .product:hover button{
+            visibility: visible;
+        }
+        .product button{
+            visibility:hidden;
+            background-color: black;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 300px;
+            height: 40px;
+        }
+        .product:hover button{
+            visibility: visible;
+        }
+        .footer{
+            background-color: black;
+            color: white;
+            display: flex;
+            margin-bottom: -10px;
+           
+
+        }
+        .icn{
+            margin-top: 50px;
+            display: flex;
+            justify-content: start;
+            font-size: 30px;
+        }
+        .icn p{
+            margin-left: 15px;
+        }
+        footer i{
+            font-size: 35px;
+            
+
+        }
+        .footer i:hover{
+            transform: scale(1.2);
+        }
+         .footer h2{
+            max-resolution: 5px 15px;
+        }
+        footer p{
+            font-size: 20px;
+            margin-right: 15px;
+        }
+
+        ul li{
+            list-style-type: none;
+            margin-top: 10px;
+            padding-bottom: 10px;
+            text-align: left;
+            cursor: pointer;
+        }
+        .footer1{
+             background-color: black;  
+            height: auto;
+            margin-top: -10px;
+
+        }
+        .footer1 img{
+            margin-left: 20px;
+            margin-top: 10px;
+                   
+        }
+            .footer1 span{
+            color: white;
+            margin-left: 1020px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+<header>
+        <div class="row">
+            <div class="col-12 header">
+                <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="row">
+            <div class="col-12 nav">
+                <img src="img/Nivia-Logo-Black-SVG_2_1.svg" alt="" srcset="" width="100px">
+
+                <a href="allsport.html">ALL SPORT</a>
+                <a href="apperal.html">APPERAL</a>
+                <a href="footware.html">FOOTWARE</a>
+                <a href="fitness.html">FITNESS</a>
+                <a href="Muscle Support.html">MUSCLE SPORT</a>
+                <a href="#">ASSESORIES</a>
+                <a href="#" style="color: red;">OFFERS</a>
+                <a href="#">CLUBS</a>
+
+                <div class="icon">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <i class="fa-regular fa-user"></i>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <br>
+    <h2>Accessories</h2><br><br>
+   <div class="row">
+        <div class="col-3 asid">
+            <aside class="sidebar">
+                <h1 style="text-align: center;">Category</h1>
+                <hr>
+                 <div class="src">
+                    <b> <p class="cate">Accessories<span>(50)</span></p></b>
+                   <p class="cate">Agility Stick<span>(1)</span></p></b>
+                    <p class="cate">Air Needle<span>(0)</span></p>
+                    <p class="cate">Ball Pump<span>(2)</span></p>
+                    <p class="cate">Cab<span>(7)</span></p>
+                    <p class="cate">Corner Flag<span>(1)</span></p>
+                    <b> <p class="cate">Dome Cones<span>(2)</span></p></b>
+                    <p class="cate">Frisbe<span>(0)</span></p>
+                     <p class="cate">Insole<span>(3)</span></p>
+                    <p class="cate">Insole Gel<span>(6)</span></p>
+                    <p class="cate">Nets<span>(6)</span></p>
+                    <p class="cate">Socks<span>(23)</span></p>
+                    <p class="cate">Stocking<span>(2)</span></p>
+                    <p class="cate">Speed Ladder<span>(1)</span></p>
+                    <p class="cate">Speed Hurdles<span>(2)</span></p>
+                </div>
+                  <h1 style="text-align: center;">Size</h1>
+                <hr>
+                    <div class="se">
+                        <p class="Size"><span><input type="checkbox" name="n1">12 inch</span>(1)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">14 ltr</span>(1)</p>
+                        <p class="Size"><span><input type="checkbox" name="">15 Ltr</span>(2)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">16 Ltr</span>(3)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">18 ltr</span>(1)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">19 ltr</span>(1)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">20 ltr</span>(2)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">21 ltr</span>(3)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">24 ltr</span>(1)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">6 inch</span>(1)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">9 inch</span>(2)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">Standard</span>(2)</p>
+                        <p class="Size"><span><input type="checkbox" name="n1">Free Size</span>(2)</p>
+                </div>
+                 <h1 style="text-align: center;">Price (₹)</h1>
+                <hr>
+
+                <div class="Price">
+                    <button>37</button>
+                         <span> - </span>
+                    <button>14225</button>
+                    
+                </div> 
+            </aside>
+        </div>
+        <div class="col-9 al">
+            <div class="product">
+                 <img src="img/Referee Cards (Set of 2).jpg" alt="" srcset="" width="100%">
+                <h3>Referee Cards (Set of 2)</h3>
+                <p style="color: red;">price ₹ 139</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/SPEEDHURDLES_1(per pc.).jpg" alt="" srcset="" width="100%">
+                <h3>SPEEDHURDLES_1(per pc.)</h3>
+                <p style="color: red;">price ₹ 135</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Nivia String Bag 2.0.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia String Bag 2.0</h3>
+                <p style="color: red;">price ₹ 249</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Agility Stick(Per pc.).jpg" alt="" srcset="" width="100%">
+                <h3>Agility Stick(Per pc.)</h3>
+                <p style="color: red;">price ₹ 299</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Nivia Ball Pump.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia Ball Pump</h3>
+                <p style="color: red;">price ₹ 310</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Referee  Flag.jpg" alt="" srcset="" width="100%">
+                <h3>Referee  Flag</h3>
+                <p style="color: red;">price ₹ 320</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Digital Stop Watch.jpg" alt="" srcset="" width="100%">
+                <h3>Digital Stop Watch</h3>
+                <p style="color: red;">price ₹ 620</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Sunvisor Cap.jpg" alt="" srcset="" width="100%">
+                <h3>Sunvisor Cap</h3>
+                <p style="color: red;">price ₹ 649</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Ball Bag.jpg" alt="" srcset="" width="100%">
+                <h3>Ball Bag</h3>
+                <p style="color: red;">price ₹ 699</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Nivia String Bag 2.0.jpg" alt="" srcset="" width="100%">
+                <h3>Referee Cards (Set of 2)</h3>
+                <p style="color: red;">price ₹ 520</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Jungle.jpg" alt="" srcset="" width="100%">
+                <h3>Jungle</h3>
+                <p style="color: red;">price ₹ 1,020</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Nivia Football Net.jpg" alt="" srcset="" width="100%">
+                <h3>Jungle</h3>
+                <p style="color: red;">price ₹ 4,999</p>
+                <button>Add To Cart+</button> 
+            </div>
+            <div class="product">
+                 <img src="img/Nivia shoe Bag.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia shoe Bag</h3>
+                <p style="color: red;">price ₹ 399</p>
+                <button>Add To Cart+</button> 
+            </div>
+        </div>
+   </div>
+    
+</body>
+</html>

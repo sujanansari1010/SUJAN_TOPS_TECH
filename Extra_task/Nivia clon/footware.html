@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .row {
+         .row {
             display: flex;
-            flex-wrap: wrap;
+            flex-wrap: nowrap;
         }
 
 
@@ -109,8 +108,7 @@
         .icon i {
             margin-right: -15px;
         }
-
-        aside {
+         aside {
             position: sticky;
             top: 0;
         }
@@ -124,53 +122,64 @@
         .cate span {
             margin-right: 20px;
         }
-
-        .scr {
+          .scr {
             height: 250px;
             overflow-x: auto;
         }
-
-        .se {
-         
-            justify-content: space-between;
-            font-weight: 400px;
-            margin-left: 20px;
-            height: 250px;
-            overflow-x: auto;
-        }
-        .Size{
+        .container {
             display: flex;
-            justify-content: space-between;
-            font-weight: 400;
-           
-        }
-        .size span{
-            margin-right: 20px;
-            margin-left: 20px;
-        }
-        .se span {
-            margin-right: 200px;
+            padding: 20px;
         }
 
-        .main {
-            float: left;
-            width: 30%;
-            height: 400px;
-            padding: 20px 15px;
-           
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            border-right: 1px solid #ccc;
         }
-        .main p{
-            padding-top: -22px;
+        .sizes button {
+            width: 45px;
+            margin: 10px 15px 0 0;
+            padding: 10px;
+            cursor: pointer;
+            border: 1px solid #aaa;
+            background: #fff;
+        }
+        .sizes button:hover{
+            background-color: black;
+            color: white;
+        }
+        .Price button{
+            padding: 30px;
+            margin-top: 10px;
+            height: 15px;
+            margin: 10px;
+        }
+        .Price button:hover{
+            background-color: black;
+            color: white;
+        }
+        .cl {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            padding-left: 10px;
+        }
+
+        .product {
+            border: 1px solid #eee;
+            padding: 10px;
+            position: relative;
             text-align: center;
         }
-        .main h3{
-            text-align: center;
-            padding-bottom: -10px;
+
+        .product img {
+            max-width: 100%;
+            height: auto;
         }
-        .main img:hover{
+        .product img:hover{
             transform: scaleX(-1);
         }
-        .main button{
+           .product button{
             visibility:hidden;
             background-color: black;
             color: white;
@@ -179,34 +188,16 @@
             width: 300px;
             height: 40px;
         }
-        .main:hover button{
+        .product:hover button{
             visibility: visible;
         }
-        .prc{
-            margin-top: 50px;
-            font-size: 30px;
-        }
-        .prc button{
-            padding-right: 10px;
-            margin-right: 40px;
-            height: 30px;
-            width: 80px;
-            font-size: 15px;
-            font-family: fantasy;
-            margin-top: 10px;
-        }
-        .prc span{
-            padding-right: 10px;
-            padding-left: 5px;
-        }
+        
         
         .footer{
             background-color: black;
             color: white;
             display: flex;
             margin-bottom: -10px;
-           
-
         }
         .icn{
             margin-top: 50px;
@@ -225,7 +216,7 @@
         .footer i:hover{
             transform: scale(1.2);
         }
-        .footer h2{
+         .footer h2{
             max-resolution: 5px 15px;
         }
         footer p{
@@ -251,39 +242,38 @@
             margin-top: 10px;
                    
         }
-        .footer1 span{
+            .footer1 span{
             color: white;
             margin-left: 1020px;
         }
-        .asid{
+         .asid{
             position: sticky;
-            top: 40px;
+            top: 45px;
             align-self: flex-start;
             background: #fff;
             z-index: 10;
         }
-    
+
+
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
-
 <body>
-    <header>
+     <header>
         <div class="row">
             <div class="col-12 header">
                 <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
             </div>
         </div>
     </header>
-
-    <nav>
+      <nav>
         <div class="row">
             <div class="col-12 nav">
                 <img src="img/Nivia-Logo-Black-SVG_2_1.svg" alt="" srcset="" width="100px">
 
-                <a href="#">ALL SPORT</a>
+                <a href="allsport.html">ALL SPORT</a>
                 <a href="apperal.html">APPERAL</a>
-                <a href="footware.html">FOOTWARE</a>
+                <a href="#">FOOTWARE</a>
                 <a href="fitness.html">FITNESS</a>
                 <a href="Muscle Support.html">MUSCLE SPORT</a>
                 <a href="Accessories.html">ASSESORIES</a>
@@ -299,138 +289,138 @@
             </div>
         </div>
     </nav>
-<br>
-    <h3>All Sport</h3>
+    <div class="row">
+        <div class="col-12 banner">
+            <img src="img/Footwear_main_Shoes_category-banner.jpg" width="100%">
+        </div>
+    </div>
 
-    
-        <div class="row">
-            <div class="col-3 asid ">
-                <h1 style="text-align: center;">Category</h1>
+    <h2>Sports Shoes</h2><br><br>
+    <div class="row">
+        <div class="col-3 asid">
+             <aside class="sidebar">
+                 <h1 style="text-align: center;">Category</h1>
                 <hr>
 
-                <div class="scr">
-                    <p class="cate">All Sport<span>(558)</span></p>
-                    <p class="cate">Football<span>(108)</span></p>
-                    <p class="cate">Turf<span>(34)</span></p>
-                    <p class="cate">BasketBall<span>(42)</span></p>
-                    <p class="cate">VOLLYBALL<span>(31)</span></p>
-                    <p class="cate">Badminton<span>(13)</span></p>
-                    <p class="cate">Cricket<span>(26)</span></p>
-                    <p class="cate">Ruuning<span>(32)</span></p>
-                    <p class="cate">Kabbaddi<span>(50)</span></p>
-                    <p class="cate">Kho Kho<span>(75)</span></p>
-                    <p class="cate">Baseball<span>(90)</span></p>
+                  <div class="scr">
+                   <b> <p class="cate">Footwear<span>(62)</span></p></b>
+                   <b> <p class="cate">Men<span>(62)</span></p></b>
+                    <p class="cate">Football<span>(29)</span></p>
+                    <p class="cate">Futsal/Turf Shoe<span>(15)</span></p>
+                    <p class="cate">Badminton<span>(42)</span></p>
+                    <p class="cate">Cricket<span>(31)</span></p>
+                    <p class="cate">Tennis<span>(13)</span></p>
+                    <b> <p class="cate">Kids<span>(62)</span></p></b>
+                    <p class="cate">School Shoes<span>(32)</span></p>
+                    <p class="cate">Futsal/Turf Shoe<span>(50)</span></p>
+                    <p class="cate">Badminton<span>(75)</span></p>
+                    <p class="cate">Football<span>(90)</span></p>
                     <p class="cate">Tennis<span>(20)</span></p>
                 </div>
-
+                 <br>
                 <h1 style="text-align: center;">Size</h1>
                 <hr>
-                <div class="se">
-                    <p class="Size"><span><input type="checkbox" name="n1">1</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">2</span>(18)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">3</span>(55)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">4</span>(78)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">5</span>(87)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">6</span>(56)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">7</span>(67)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">8</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">9</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">10</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">11</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">12</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">13</span>(19)</p>
-                    <p class="Size"><span><input type="checkbox" name="n1">14</span>(19)</p>
+                    <div class="sizes">
+                         <!-- Buttons 1 to 13 -->
+                        <button>1</button><button>2</button><button>3</button><button>4</button>
+                        <button>5</button><button>6</button><button>7</button><button>8</button>
+                        <button>9</button><button>10</button><button>11</button><button>12</button>
+                        <button>13</button>
+                    </div>
+                     <h1 style="text-align: center;">Price (₹)</h1>
+                <hr>
+
+                <div class="Price">
+                    <button>699</button>
+                         <span> - </span>
+                    <button>1499</button>
+                    
                 </div>
-                <div class="prc">
-                    <p style="text-align: center;">price (₹)</p>
-                    <hr>
-                    <button><span>$</span>10</button>
-                    <button><span>$</span>43,999</button>
-                </div>
-            </div>
-        
-        <div class="col-9 gg">
-            <div class="main">
-             
-                <img src="img/nivia digger.jpeg" alt="" srcset="" width="100%">
+             </aside>
+        </div>
+        <div class=" col-9 cl">
+              <div class="product">
+                 <img src="img/nivia digger.jpeg" alt="" srcset="" width="100%">
                 <h3>Nivia Dagger Men's Football Studs</h3>
-                <p> ₹ 1,799 <del>₹ 1,999</del> <span>10% Off</span></p>
+                <p> ₹ 1,799 <del>₹ 1,999</del> <span style="color: orange;">10% Off</span></p>
                 <button>Add To Cart+</button>
             </div>
-
-            <div class="main">
-                <img src="img/safari men's shoes.jpeg" alt="" srcset="" width="100%">
-                <h3>Safari Men's Football Shoes</h3>
-                <p style="color: red;">price ₹ 1,499</p>
-                <button>Add To Cart+</button>
-            </div>
-
-            <div class=" main">
+             <div class="product">
                 <img src="img/nivia cirk.jpeg" alt="" srcset="" width="100%">
                 <h3>Nivia Crick - 1000 2.0 Cricket Shoes</h3>
                 <p style="color: red;"> price ₹ 2,749</p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
-                <img src="img/oslar.jps" alt="" srcset="" width="100%">
-                <h3>Oslar - 1000 2.0</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
-              <div class=" main">
+             <div class="product">
                 <img src="img/Encounter.jpg" alt="" srcset="" width="100%">
                 <h3> Encounter - 1000 2.0 Cricket Shoes</h3>
                 <p style="color: red;"> price ₹ 2,749</p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
+             <div class="product">
+                 <img src="img/football(yellow).jpg" alt="" srcset="" width="100%">
+                <h3>Nivia IGNITE Men's Football Studs</h3>
+                <p> ₹ 1,799 <del>₹ 1,999</del> <span style="color: orange;">10% Off</span></p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/footballstuds(red).jpg" alt="" srcset="" width="100%">
+                <h3>Nivia NITRO Football Studs</h3>
+                <p> ₹ 1,799 <del>₹ 1,999</del> <span style="color: orange;">10% Off</span></p>
+                <button>Add To Cart+</button>
+            </div>
+            <div class="product">
+                 <img src="img/badminton(blue).jpg" alt="" srcset="" width="100%">
+                <h3>Nivia Power Strick Football Studs</h3>
+                <p> ₹ 1,799 <del>₹ 1,999</del> <span style="color: orange;">10% Off</span></p>
+                <button>Add To Cart+</button>
+            </div>
+             <div class="product">
+                 <img src="img/oslar.jps" alt="" srcset="" width="100%">
+                <h3>Oslar - 1000 2.0</h3>
+                <p style="color: red;"> price ₹ 2,749</p>
+                <button>Add To Cart+</button>
+            </div>
+             <div class="product">
                 <img src="img/hy-badminton.jpg" alt="" srcset="" width="100%">
                 <h3>Nivia Crick - 1000 2.0 Cricket Shoes</h3>
                 <p style="color: red;"> price ₹ 2,749</p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
-                <img src="img/classic football stockings.jpg" alt="" srcset="" width="100%">
-                <h3>classic football stockings</h3>
+             <div class="product">
+                <img src="img/safari men's shoes.jpeg" alt="" srcset="" width="100%">
+                <h3>Safari Men's Football Shoes</h3>
+                <p style="color: red;">price ₹ 1,499</p>
+                <button>Add To Cart+</button>
+            </div>
+             <div class="product">
+                 <img src="img/nivia cirk.jpeg" alt="" srcset="" width="100%">
+                <h3>Nivia Crick - 1000 2.0 Cricket Shoes</h3>
                 <p style="color: red;"> price ₹ 2,749</p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
-                <img src="img/orthopedic basic wrist thumb support.jpg" alt="" srcset="" width="100%">
-                <h3>orthopedic basic wrist thumb support</h3>
+             <div class="product">
+                 <img src="img/niviasports.jpg" alt="" srcset="" width="100%">
+                <h3>Nivia Crick - 1000 2.0 Cricket Shoes</h3>
                 <p style="color: red;"> price ₹ 2,749</p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
-                <img src="img/nivia trainer jump rope.jpg" alt="" srcset="" width="100%">
-                <h3>nivia trainer jump rope</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
+             <div class="product">
+                 <img src="img/nivia digger.jpeg" alt="" srcset="" width="100%">
+                <h3>Nivia Dagger Men's Football Studs</h3>
+                <p> ₹ 1,799 <del>₹ 1,999</del> <span style="color: orange;">10% Off</span></p>
                 <button>Add To Cart+</button>
             </div>
-              <div class=" main">
-                <img src="img/ballnivia.jpg" alt="" srcset="" width="100%">
-                <h3>Basket Ball Nivia</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
+             <div class="product">
+                 <img src="img/nivia digger.jpeg" alt="" srcset="" width="100%">
+                <h3>Nivia Dagger Men's Football Studs</h3>
+                <p> ₹ 1,799 <del>₹ 1,999</del> <span style="color: orange;">10% Off</span></p>
                 <button>Add To Cart+</button>
             </div>
-             
-             <div class=" main">
-                <img src="img/homepage football.jpg" alt="" srcset="" width="100%">
-                <h3>homepage football</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
-             <div class=" main">
-                <img src="img/World fest football.jpg" alt="" srcset="" width="100%">
-                <h3>homepage football</h3>
-                <p style="color: red;"> price ₹ 2,749</p>
-                <button>Add To Cart+</button>
-            </div>
+            
         </div>
-        </div>
-    
-
-    <!---------footer--------->
+    </div>
+     <!---------footer--------->
    
 
     <div class="row">
@@ -490,7 +480,5 @@
             <span>© 2024 Niviasports, All Rights Reserved</span>
         </div>
     </div>
-
 </body>
-
 </html>

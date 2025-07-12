@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         .row {
+            display: flex;
+            flex-wrap: nowrap;
+        }
+
+
+        .row1 {
+            display: flex;
+
+            padding: auto;
+        }
+
+        .col-1 {
+            width: 8.33%
+        }
+
+        .col-2 {
+            width: 16.66%
+        }
+
+        .col-3 {
+            width: 25%
+        }
+
+        .col-4 {
+            width: 33.33%
+        }
+
+        .col-5 {
+            width: 41.66%
+        }
+
+        .col-6 {
+            width: 50%
+        }
+
+        .col-7 {
+            width: 58.33%
+        }
+
+        .col-8 {
+            width: 66.66%
+        }
+
+        .col-9 {
+            width: 75%
+        }
+
+        .col-10 {
+            width: 83.33%
+        }
+
+        .col-11 {
+            width: 91.66%
+        }
+
+        .col-12 {
+            width: 100%
+        }
+
+        
+        .header {
+            background-color: black;
+            color: white;
+            text-align: center;
+        }
+
+        .nav {
+            height: 60px;
+            text-indent: 50px;
+            display: flex;
+
+
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: black;
+            text-align: center;
+            padding-top: 20px;
+            padding-left: 5px;
+
+        }
+
+        .nav a:hover {
+            color: red;
+        }
+         .icon {
+            font-size: 20px;
+            padding-top: 18px;
+            padding-left: 35px;
+
+        }
+
+        .icon i {
+            margin-right: -15px;
+        }
+         .f1{
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .f1 img{
+            border: solid 0px rgb(224, 221, 221);
+            border-radius: 5px;
+            margin-left: 25px;
+            box-shadow: 8px 8px 18px;
+            width: 110px;
+        }
+        .f1 img:hover{
+             transform: scale(1.2);
+            transition-delay: o.5s;
+        }
+        .f1 p{
+            text-align: center;
+        }
+        .l1{
+            float: left;
+            width: 30%;
+            padding: 15px 15px;
+            margin-right: 10px;
+            
+        }
+        .l1 img:hover{
+            transform: scale(1.1);
+        }
+        
+    </style>
+
+  
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+<body>
+     <header>
+        <div class="row">
+            <div class="col-12 header">
+                <p>Get 15% Off on purchases above ₹2500 or Get 30% Off on purchases above ₹5000</p>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="row">
+            <div class="col-12 nav">
+                <img src="img/Nivia-Logo-Black-SVG_2_1.svg" alt="" srcset="" width="100px">
+
+                <a href="#">ALL SPORT</a>
+                <a href="#">APPERAL</a>
+                <a href="#">FOOTWARE</a>
+                <a href="#">FITNESS</a>
+                <a href="#">MUSCLE SPORT</a>
+                <a href="#">ASSESORIES</a>
+                <a href="#" style="color: red;">OFFERS</a>
+                <a href="#">CLUBS</a>
+
+                <div class="icon">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                    <i class="fa-regular fa-user"></i>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+    <div class="row">
+        <div class="col-12 banner">
+            <img src="img/Volleyball_Main_Banner_Desk_01July.jpg" width="100%">
+        </div>
+    </div>
+
+    
+   
+    <div class="row">
+        <div class="col-12 f1">
+
+            <div>
+                <img src="img/Volleyball_Balls.jpg" width="10%" alt="">
+                <p>VOLLYBALL</p>
+            </div>
+            <div>
+                <img src="img/Footwear-sub-cat.jpg" width="10%" alt="">
+                <p>FOOTWEAR</p>
+            </div>
+            <div>
+                <img src="img/Bags.jpg" width="10%" alt="">
+                <p>BAGS</p>
+            </div>
+            <div>
+                <img src="img/Jersey-sub-cat.jpg" width="10%" alt="">
+                <p>JERSEY</p>
+            </div>
+            <div>
+                <img src="img/SOCKS.jpg" width="10%" alt="">
+                <p>SOCKS </p>
+            </div>
+            <div>
+                <img src="img/Equipments.jpg" width="10%" alt="">
+                <p>EQIPMENTS</p>
+            </div>
+            <div>
+                <img src="img/Accessories.jpg" width="10%" alt="">
+                <p>ACCESSORIES</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- level of vollyball -->
+     <div class="col-12 level">
+        <h1 style="padding-left: 40px;">SHOP BY LEVEL</h1>
+        <div class="l1">
+            <img src="vollyballimg/Volleyball.jpg" alt="" class="s" width="100%">
+        </div>
+        <div class="l1">
+            <img src="vollyballimg/Intermediate_desk_volleyball.jpg" alt="" class="s" width="100%">
+        </div>
+        <div class="l1">
+            <img src="vollyballimg/Begainners_desk_volleyball.jpg" alt="" class="s" width="100%">
+        </div>
+     </div>
+     <br>
+      <!-- New Launches -->
+       <h1>NEW LAUNCHES</h1>
+       <div class="col-12 ln">
+        <div class="lnch">
+            <img src="img/lunch1.jpg" width="100%" alt="">
+            <p>Nitro FIFA Certified Football</p>
+            <p style="color: red;">₹ 2,199</p>
+        </div>
+        </div>
+       </div>
+</body>
+</html>
