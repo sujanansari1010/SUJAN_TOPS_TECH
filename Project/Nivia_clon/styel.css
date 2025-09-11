@@ -211,7 +211,7 @@
 
         }
         .icn{
-            margin-top: 50px;
+            margin-top: 10px;
             display: flex;
             justify-content: start;
             font-size: 30px;
@@ -260,6 +260,44 @@
         .pic img:hover{
             transform: scaleX(-1);
         }
-            
+          
+        .input-group {
+  display: flex;
+  border-bottom: 1px solid #999;
+  margin: 10px 0;
+  width: 85%;
+}
+
+.input-group input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: white;
+  padding: 10px;
+  outline: none;
+  width: 20px;
+}
+
+.input-group button {
+  background-color: transparent;
+  color: red;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.whatsapp a {
+  background-color: #25D366;
+  color: white;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  display: inline-block;
+}
 
        

@@ -1,0 +1,102 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+
+</head>
+<body>
+<!--
+<input type="submit" name="submit" value="click here" />
+
+onblur="", 
+onchange="", 
+onclick="", 
+ondblclick="", 
+onfocus="", 
+onkeydown="", 
+onkeypress="", 
+onkeyup="", 
+onmousedown="", 
+onmousemove="", 
+onmouseout="", 
+onmouseover="", 
+onmouseup="">  
+
+
+
+<!-- onclick HTML EVENT-->
+<div>
+
+
+<button onclick="change()">Change onclick</button>
+<button ondblclick="change()">Change ondblclick</button>
+<button onmouseover="change()">Change onmouseover</button>
+<button onmouseout="change()">Change onmouseout</button>
+
+
+<h1 id="test"> Hi i am HTML </h1>
+
+<script>
+	function change()
+	{
+		document.getElementById('test').innerHTML="Hi i am Javascript";
+	}
+	
+</script>
+
+
+<input type="text" id="test1" onfocus="change1()" onblur="change2()">
+
+<br><br><br>
+
+<input type="text" id="demo" onkeypress="upper()">
+
+<script>
+	function change1()
+	{
+		document.getElementById('test1').style.backgroundColor="red";
+		document.getElementById('test1').style.color="white";
+	}
+	function change2()
+	{
+		document.getElementById('test1').style.backgroundColor="green";
+	}
+	
+	function upper()
+	{
+		document.getElementById('demo').style.textTransform="uppercase";
+	}
+</script>
+
+<br><br><br>
+
+<img src="star.png" id="test2" width="100px" onmouseover="moon()" onmouseout="star()">
+
+<script>
+	function moon(){
+		var img=document.getElementById('test2');
+		img.src='moon.png';
+	}
+	
+	function star(){
+		var img=document.getElementById('test2');
+		img.src='star.png';
+	}
+</script>
+
+<br><br><br>
+
+<img src="star.png" id="test3" width="100px" onmouseover="big()" onmouseout="small()">
+
+<script>
+	function big(){
+		document.getElementById('test3').style.width="150px";
+	}
+	
+	function small(){
+		document.getElementById('test3').style.width="100px";
+	}
+</script>
+
+</body>
+</html>

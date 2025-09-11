@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <link type="text/css" rel="stylesheet"
+        href="chrome-extension://fheoggkfdfchfphceeifdbepaooicaho/css/mcafee_fonts.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
+
+    <style>
+        .img {
+            border-radius: 35px;
+            transform: rotate(3deg);
+            transition: all 0.5 ease;
+        }
+
+        .img:hover {
+            transform: rotate(0deg);
+        }
+
+        .side {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--heading-color);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color:
+                color-mix(in srgb, #363f40, transparent 20%);
+            margin-bottom: 2.5rem;
+        }
+
+        .img {
+            border-radius: 35px;
+            transition-duration: 0.5s;
+            transform: rotate(-2deg);
+        }
+
+        .img:hover {
+            transform: rotate(0deg) scale(1.02);
+        }
+
+        .side {
+            font-size: 3.5rem;
+            font-weight: 600;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: #1f2f31;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color:
+                color-mix(in srgb, #363f40, transparent 20%);
+            margin-bottom: 2.5rem;
+        }
+
+        .bi-award {
+            font-size: 50px;
+            /* Adjust the size */
+            color: rgb(46, 175, 205);
+        }
+
+        .bi-geo-alt {
+            font-size: 45px;
+            /* Adjust the size */
+            color: rgb(46, 175, 205);
+        }
+
+        .bi-people {
+            font-size: 50px;
+            /* Adjust the size */
+            color: rgb(46, 175, 205);
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .action-link {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: #363f40;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .action-link:hover {
+            transform: translateX(5px);
+            color: #099aa7;
+        }
+
+        .action-link i {
+            color: #099aa7;
+        }
+
+        .section-heading {
+            font-size: 3rem;
+            font-weight: 400;
+            margin-top: 25px;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, #1f2f31, #099aa7);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .lead-description {
+            font-size: 1.3rem;
+            font-weight: 300;
+            line-height: 1.6;
+            color: color-mix(in srgb, #363f40, transparent 25%);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .image-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            height: 500px;
+        }
+
+        .primary-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px color-mix(in srgb, #363f40, transparent 88%);
+        }
+
+        .primary-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .primary-image:hover img {
+            transform: scale(1.08);
+        }
+
+        .certification-badge {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 10px 16px;
+            border-radius: 25px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            backdrop-filter: blur(10px);
+            border: 1px solid color-mix(in srgb, #363f40, transparent 90%);
+        }
+
+        .certification-badge .bi-award {
+            font-size: 16px;
+        }
+
+        .color {
+            color: black;
+        }
+
+        .secondary-images {
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.4s ease;
+            gap: 1.5rem;
+        }
+
+        .small-image {
+            border-radius: 12px;
+            overflow: hidden;
+            flex: 1;
+            margin-top: 5px;
+            box-shadow: 0 15px 40px color-mix(in srgb, #363f40, transparent 92%);
+        }
+
+        .small-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .small-image:hover img {
+            transform: scale(1.1);
+        }
+
+
+
+        .right {
+            display: flex;
+            gap: 1rem;
+            margin: 10px 0px 0px 5px;
+        }
+
+        .right p {
+            font-size: 1.05rem;
+            color:
+                color-mix(in srgb, #363f40, transparent 20%);
+            font-weight: 400;
+        }
+
+        .right i {
+            color: #099aa7;
+            font-size: 1.30rem;
+        }
+
+        .icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .set {
+            flex-direction: column;
+        }
+
+        .metrix {
+            display: flex;
+            gap: 2.7rem;
+
+        }
+
+        .mt h2 {
+            font-size: 30px;
+            text-align: center;
+            color: #099aa7;
+        }
+
+        .botom {
+            border: 1px solid #099aa7;
+            padding: 10px;
+        }
+
+        .botom i {
+            color: #099aa7;
+            gap: 1.1rem;
+        }
+
+        .department-description {
+            font-size: 18px;
+            line-height: 1.8;
+            color:
+                color-mix(in srgb, #363f40, transparent 25%);
+            margin-bottom: 32px;
+        }
+
+        .aero {
+            font-size: 18px;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        .aero i {
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .aero:hover {
+            transform: translateX(5px);
+            color: #099aa7;
+        }
+
+        .card-set {
+            transition: all 0.4s ease;
+            width: 25vw;
+            border: none;
+            height: 120px;
+            margin: 30px;
+        }
+
+        .patient {
+            text-align: center;
+            border: 2px solid rgb(205, 198, 198);
+            border-radius: 5px;
+            padding: 10px;
+            display: flex;
+            border-left: 5px solid #099aa7;
+        }
+
+        .bi-heart-pulse-fill {
+            left: 20px;
+            color: #099aa7;
+            font-size: 35px;
+            position: relative;
+            top: 20px;
+        }
+
+        .card-set {
+            transition: all 0.4s ease;
+
+            border: none;
+            margin: 30px;
+            height: auto;
+        }
+
+        .card-set:hover {
+            box-shadow: 0 20px 50px color-mix(in srgb, #5ac2cc, transparent 70%);
+            transform: translateY(-8px);
+        }
+        .services-img img {
+    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    
+}
+.service-card1 {
+    border: none;
+    border-top: 3px solid transparent;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="row bg-primary">
+        <div class="col-md">
+            <img src="img/logo.jpg" alt="" srcset="" width="250px">
+            <button type="button" class="btn btn-info float-end">Download</button>
+        </div>
+    </div>
+
+    <!-- <div class="container">
+        <div class="row mt-4">
+            <div class="col-md-2">
+                <h2><span class="text-dark">Medi</span><span class="text-info">Nest</span></h2>
+            </div>
+            <div class="col-md-8">
+                <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">About</a>
+        </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Departments</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Doctors</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Services</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">More Pages</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Dropdown</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact</a>
+        </li>
+        </ul>
+    </div>
+     <div class="col-md-2">
+                <button type="button" class="btn btn-primary">Apointment</button>
+            </div>
+        </div> -->
+
+    <!--   <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+            <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Departments</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Doctors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">More Pages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dropdown</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav> -->
+    <!-- <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Logo</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>    
+      </ul>
+    </div>
+  </div>
+</nav> -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <!-- Logo -->
+            <a class="navbar-brand fw-bold text-dark" href="#">
+                Medi<span class="text-primary">Nest</span>
+            </a>
+
+            <!-- Right side: Appointment button + Hamburger -->
+            <div class="d-flex align-items-center">
+                <a href="#" class="btn btn-primary me-2 d-lg-none">Appointment</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="mainNavbar">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Departments</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Doctors</a></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="morePages" data-bs-toggle="dropdown">More
+                            Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Page 1</a></li>
+                            <li><a class="dropdown-item" href="#">Page 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdown"
+                            data-bs-toggle="dropdown">Dropdown</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Option 1</a></li>
+                            <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+                </ul>
+
+                <!-- Appointment button (Desktop only) -->
+                <a href="#" class="btn btn-primary ms-lg-3 d-none d-lg-inline-block">Appointment</a>
+            </div>
+        </div>
+    </nav>
+
+
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <img src="img/staff-8.webp" class="ms-5 img" srcset="" width="70%">
+        </div>
+        <div class="col-md-6">
+            <button style="background-color: #099aa7;" class="btn btn-info">Trusted Healthcare Provider</button>
+            <h1 class="side">Excellence in Medical<br> Care Since 1985</h1>
+            <p class="hero-description">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in
+                ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+
+
+            <div class="icons">
+                <i class="bi bi-award"></i>
+                <div class="set">
+                    <h2>35+</h2>
+                    <p> Years Expireance</p>
+                </div>
+
+                <i class="bi bi-people"></i>
+                <div class="set">
+                    <h2>150+</h2>
+                    <p> Medical Specialists</p>
+                </div>
+
+                <i class="bi bi-geo-alt"></i>
+                <div class="set">
+                    <h2>12</h2>
+                    <p> Clinic Locations</p>
+                </div>
+            </div>
+            <div>
+                <button style="background-color: #099aa7;" class="btn btn-info text-white mt-3">Scedule
+                    consultaion</button>
+                <button type="button" class="btn btn-light mt-3"><i class="bi bi-play-circle"></i> Watch Our
+                    Story</button>
+            </div>
+            <div class="flex">
+                <a href="" class="action-link mt-3"> <i class="bi bi-calendar-check"></i><span>Find Available
+                        Times</span></a>
+                <a href="#" class="action-link mt-3 p-3">
+                    <i class="bi bi-chat-dots"></i>
+                    <span>Chat with Support</span>
+                </a>
+                <a href="#" class="action-link mt-3">
+                    <i class="bi bi-file-medical"></i>
+                    <span>Patient Portal</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+    <br>
+    <br>
+    <div class="col-md-8 mx-auto text-center mb-5 ">
+        <h2 class="section-heading">Excellence in Healthcare Since 1985</h2>
+        <p class="lead-description">We are committed to providing world-class medical care through innovation,
+            compassion, and unwavering dedication to our patients' wellbeing and recovery.</p>
+    </div>
+
+
+    <!-- images -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 image-grid">
+                <div class="primary-image">
+                    <img src="img/facilities-6.webp" class="img-fluid">
+                    <div class="certification-badge">
+                        <i class="bi bi-award"></i>
+                        <span>JCI Accredited</span>
+                    </div>
+                </div>
+                <div class="secondary-images">
+                    <div class="small-image">
+                        <img src="img/consultation-3.webp" alt="Doctor consultation" class="img-fluid">
+                    </div>
+                    <div class="small-image">
+                        <img src="img/surgery-2.webp" alt="Medical procedure" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- image side -->
+            <div class="col-md-5">
+                <div class="patient">
+                    <i class="bi bi-heart-pulse-fill"></i>
+                    <div class="card-body">
+                        <h2>Patient-Centered Approach</h2>
+                        Every treatment plan is carefully customized to <br> meet individual patient needs and medical
+                        history.
+                    </div>
+                </div>
+                <div class="right">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>
+                        Advanced diagnostic technology and imaging
+                    </p>
+                </div>
+                <div class="right">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>
+
+                        Board-certified physicians and specialists
+                    </p>
+                </div>
+                <div class="right">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>
+                        Comprehensive rehabilitation programs
+                    </p>
+                </div>
+                <div class="right">
+                    <i class="bi bi-check-circle-fill"></i>
+                    <p>
+                        24/7 emergency and critical care services
+                    </p>
+                </div>
+                <div class="metrix mt-4">
+                    <div class="mt">
+                        <h2>98%</h2>
+                        <p> Patient Satisfaction</p>
+                    </div>
+                    <div class="mt">
+                        <h2>35K+</h2>
+                        <p>Lives Improved</p>
+                    </div>
+
+                </div>
+                <button class="btn btn-info text-white p-2">Explore Our Services</button>
+                <button class="btn botom p-2"><i class="bi bi-telephone"></i>Schedule Consultation</button>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- feathurs -->
+    <div class="row">
+        <div class="col-md-12 mt-5 mb-5 text-center">
+            <h2> Featured Departments</h2>
+            Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit
+        </div>
+    </div>
+
+    <!-- emergency -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <p style="color: #099aa7;letter-spacing: 2px;">Emergency Medicine</p>
+                <h1 style="font-weight: 500;">24/7 Emergency Care <br> Services</h1>
+                <p class="department-description"> Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+                    accusantium doloremque laudantium,
+                    totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
+                    dicta sunt explicabo.</p>
+                <div class="right">
+                    <i class="bi bi-check-circle-fill"></i><span>24/7 Emergency Response</span>
+                </div>
+                <div class="right">
+                    <i class="bi bi-check-circle-fill"></i><span>Advanced Life Support</span>
+                </div>
+                <div class="right">
+                    <i class="bi bi-check-circle-fill"></i><span>Trauma Care Specialists</span>
+                </div>
+                <p class="aero">Learn More<i class="bi bi-arrow-right"></i> </p>
+            </div>
+            <div class="col-md-6">
+                <img src="img/emergency-3.webp" style="border-radius: 15px;" width="100%" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!--card-->
+    <div class="container">
+        <div class="row mt-5 ms-2">
+            <div class="col-md-4">
+                <div class="card card-set" style="width: 25rem;">
+                    <i class="fas fa-heartbeat fs-1 ms-3 p-2 text-info"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Cardiology</h5>
+                        <p class="card-text">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
+                            sed quia consequuntur magni dolores.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">15++</span>
+                                <p>Specialists</p>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">500++</span>
+                                <p>Procedures</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-set" style="width: 25rem;">
+                    <i class="fas fa-brain fs-1 ms-3 p-2 text-info"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Neurology</h5>
+                        <p class="card-text">Eos qui ratione voluptatem sequi nesciunt neque porro quisquam est, qui
+                            dolorem ipsum quia dolor sit amet.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">8++</span>
+                                <p>Specialists</p>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">200++</span>
+                                <p>Treatments</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-set" style="width: 25rem;">
+                    <i class="fas fa-cut fs-1 ms-3 p-2 text-info"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Surgery</h5>
+                        <p class="card-text">Consectetur adipisci velit sed quia non numquam eius modi tempora incidunt
+                            ut labore et dolore magnam aliquam.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">12++</span>
+                                <p>Surgeons</p>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">1000++</span>
+                                <p>Operations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-set" style="width: 25rem;">
+                    <i class="fas fa-baby fs-1 ms-3 p-2 text-info"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Pediatrics</h5>
+                        <p class="card-text">Quaerat voluptatem ut enim ad minima veniam quis nostrum exercitationem
+                            ullam corporis suscipit laboriosam.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">10++</span>
+                                <p>Pediatricians</p>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">2000++</span>
+                                <p>Young Patients</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-set" style="width: 25rem;">
+                    <i class="fas fa-eye fs-1 ms-3 p-2 text-info"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Ophthalmology</h5>
+                        <p class="card-text">Nisi ut aliquid ex ea commodi consequatur quis autem vel eum iure
+                            reprehenderit qui in ea voluptate velit esse.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">6++</span>
+                                <p>Eye Doctors</p>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">800++</span>
+                                <p>Eye Exams</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card card-set" style="width: 25rem;">
+                    <i class="fas fa-band-aid fs-1 ms-3 p-2 text-info"></i>
+                    <div class="card-body">
+                        <h5 class="card-title">Dermatology</h5>
+                        <p class="card-text">Quam nihil molestiae consequatur vel illum qui dolorem eum fugiat quo
+                            voluptas nulla pariatur at vero eos.</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">7++</span>
+                                <p>Dermatologists</p>
+                            </div>
+                            <div class="col-md-6">
+                                <span class="fs-3 text-info">600++</span>
+                                <p>Skin Treatments</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <br>
+        <!--Explore-->
+        <div class="col-md-12 mx-auto text-center mb-5 p-3" style="background-color: #e9ebe9;">
+            <h2 class="section-heading">Explore All Our Medical Departments</h2>
+            <p class="lead-description">Et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                voluptatum deleniti atque corrupti quos dolores.</p>
+            <button class="btn btn-outline-primary mt-3 p-2">View All Department</button>
+        </div>
+
+        <!--Featured-->
+        <section class="featured-services">
+        <div class="container">
+            <div class="row text-center mt-5">
+                <div class="col-lg-12">
+                    <h1>Featured Services</h1>
+                    <p class="text-muted mt-2 mb-5">Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+                        consectetur velit</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="container py-3">
+            <div class="row g-4 mb-5">
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card2 h-100">
+                        <div class="service-img">
+                            <img src="img/cardiology-2.webp" alt="Cardiology" width="100%>
+                            <div class="icon-badge">
+                                <i class="bi bi-heart-pulse text-white"></i>
+                            </div>
+                        </div>
+                        <div class="service-body mt-3">
+                            <h5>Cardiology Excellence</h5>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ante ipsum primis in
+                                faucibus orci luctus et ultrices posuere cubilia curae.</p>
+                            <a href="#" class="learn-more stretched-link">Learn More </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card2 h-100">
+                        <div class="service-img">
+                            <img src="img/neurology-3.webp" alt="Cardiology" width="100%>
+                            <div class="icon-badge">
+                                <i class="fa-solid fa-brain text-white"></i>
+                            </div>
+                        </div>
+                        <div class="service-body mt-3">
+                            <h5>Neurology Care</h5>
+                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                                veniam, quis nostrud exercitation ullamco laboris nisi.</p>
+                            <a href="#" class="learn-more">Learn More </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card2 h-100">
+                        <div class="service-img">
+                            <img src="img/orthopedics-1.webp" alt="Cardiology" width="100%>
+                            <div class="icon-badge">
+                                <i class="fas fa-bone text-white"></i>
+                            </div>
+                        </div>
+                        <div class="service-body mt-3">
+                            <h5>Orthopedic Surgery</h5>
+                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                                nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
+                            <a href="#" class="learn-more">Learn More </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card2 h-100">
+                        <div class="service-img">
+                            <img src="img/pediatrics-4.webp" alt="Cardiology" width="100%>
+                            <div class="icon-badge">
+                                <i class="fas fa-baby text-white"></i>
+                            </div>
+                        </div>
+                        <div class="service-body mt-3">
+                            <h5>Pediatric Care</h5>
+                            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde
+                                omnis iste natus error sit voluptatem accusantium.</p>
+                            <a href="#" class="learn-more">Learn More </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card2 h-100">
+                        <div class="service-img">
+                            <img src="img/oncology-2.webp" alt="Cardiology" width="100%>
+                            <div class="icon-badge">
+                                <i class="fas fa-ribbon text-white"></i>
+                            </div>
+                        </div>
+                        <div class="service-body mt-3">
+                            <h5>Oncology Treatment</h5>
+                            <p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                                voluptatum deleniti atque corrupti quos dolores et quas molestias.</p>
+                            <a href="#" class="learn-more">Learn More </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="card service-card2 h-100">
+                        <div class="service-img">
+                            <img src="img/laboratory-3.webp" alt="Cardiology" width="100%">
+                            <div class="icon-badge">
+                                <i class="fas fa-flask text-white"></i>
+                            </div>
+                        </div>
+                        <div class="service-body mt-3">
+                            <h5>Laboratory Services</h5>
+                            <p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet
+                                ut et voluptates repudiandae sint et molestiae non recusandae.</p>
+                            <a href="#" class="learn-more">Learn More </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+
+
+<html>
+	<head>
+	
+		
+		
+		
+	</head>
+	
+	<body>
+		
+		<h1>Hello i am html 5+5</h1>
+	
+	<script>
+	
+		// single line comment
+		
+		/*
+		multi
+		line 
+		comment
+		*/
+		
+		document.write("Hi hello javascript");
+		document.write("<h1>Hi hello javascript</h1>");
+		document.write(5+5);
+		
+		
+		document.write("Hi hello"+"javascript");
+		
+		var a,b,c;
+		a=10;
+		b=20;
+		c=a+b;
+		
+		document.write("<h1> Sum of a & b are : " + c + "</h1>");
+		document.write(`<h1> Sum of a & b are : ${c} </h1>`);
+	</script>
+	
+	
+	
+	<!-- ========================== dynamic  -->
+	
+	<!-- html manuplation -->
+	<h1 id='test'>Hello i am html</h1>
+	
+	<script>
+		document.getElementById('test').innerHTML="Hello i am javascript";
+	</script>
+	
+	<!-- css manuplation -->
+	<h1 id='demo' style="background-color:red;color:yellow;text-align:center">Hello i am html</h1>
+	
+	<script>
+		document.getElementById('demo').style.backgroundColor="green";
+		document.getElementById('demo').style.color="red";
+	</script>
+	
+	
+	<!-- dynamic programing -->
+	<script>
+		
+		var age=19;
+		if(age>18)
+		{
+			document.write("<h1>Elegible For Driving </h1>");
+		}
+		else
+		{
+			document.write("<h1>Not Elegible For Driving </h1>");
+		}
+		
+	</script>
+	
+	
+	</body>
+</html>
