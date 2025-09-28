@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Feedback App</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  .container {
+    background: #fff;
+    padding: 20px;
+    max-width: 500px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,.1);
+  }
+  label { display: block; margin-top: 15px; font-weight: bold; }
+  input, select, textarea, button {
+    width: 100%; padding: 8px; margin-top: 5px;
+    border: 1px solid #ccc; border-radius: 4px;
+  }
+  button { background: #28a745; color: white; border: none; cursor: pointer; margin-top: 15px; }
+  button:hover { background: #218838; }
+  .rating label { display: inline-block; margin-right: 10px; }
+  .message { margin-top: 15px; text-align: center; color: red; }
+  table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+  th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+  th { background: #28a745; color: white; }
+  .link-btn {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    background: #007bff;
+    color: #fff;
+    padding: 8px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  @media (max-width:600px) { .container { padding: 15px; } }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1 id="pageTitle">Customer Interaction Feedback</h1>
+
+  <!-- Feedback Form -->
+  <div id="formPage">
+    <form id="feedbackForm">
+      <label>Attendee Name</label>
+      <input type="text" id="name" placeholder="Enter your name">
+
+      <label>Email Address</label>
+      <input type="email" id="email" placeholder="Enter your email">
+
+      <label>Event Attended</label>
+      <select id="event">
+        <option value="">Select Event</option>
+        <option value="Webinar">Webinar</option>
+        <option value="Workshop">Workshop</option>
+        <option value="Meetup">Meetup</option>
+      </select>
+
+      <label>Rating (1-5)</label>
+      <div class="rating">
+        <label><input type="radio" name="rating" value="1">1</label>
+        <label><input type="radio" name="rating" value="2">2</label>
+        <label><input type="radio" name="rating" value="3">3</label>
+        <label><input type="radio" name="rating" value="4">4</label>
+        <label><input type="radio" name="rating" value="5">5</label>
+      </div>
+
+      <label>Comments</label>
+      <textarea id="comments" placeholder="Write at least 10 characters"></textarea>
+
+      <button type="submit">Submit Feedback</button>
+    </form>
+    <p id="message" class="message"></p>
+    <a href="#" id="goView" class="link-btn">View Feedbacks</a>
+  </div>
+
+  <!-- View Feedback -->
+  <div id="viewPage" style="display:none;">
+    <input type="text" id="search" placeholder="Search by Name or Event">
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th><th>Email</th><th>Event</th><th>Rating</th><th>Comments</th><th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="feedbackTable"></tbody>
+    </table>
+    <p id="noData" class="message"></p>
+    <a href="#" id="goForm" class="link-btn">Back to Form</a>
+  </div>
+</div>
+
+<script>
+(function(){
+  const formPage = document.getElementById('formPage');
+  const viewPage = document.getElementById('viewPage');
+  const pageTitle = document.getElementById('pageTitle');
+
+  // Page toggle
+  document.getElementById('goView').onclick = () => {
+    formPage.style.display = 'none';
+    viewPage.style.display = 'block';
+    pageTitle.textContent = 'All Feedback';
+    loadFeedbacks();
+  };
+  document.getElementById('goForm').onclick = () => {
+    formPage.style.display = 'block';
+    viewPage.style.display = 'none';
+    pageTitle.textContent = 'Customer Interaction Feedback';
+  };
+
+  // Form handling
+  const form = document.getElementById('feedbackForm');
+  const message = document.getElementById('message');
+
+  form.addEventListener('input', validateForm);
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (validateForm()) {
+      saveToLocalStorage();
+      showMessage('Feedback Submitted Successfully!', 'green');
+      form.reset();
+    } else {
+      showMessage('Please fill all fields correctly!', 'red');
+    }
+  });
+
+  function validateForm() {
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const event = document.getElementById('event').value;
+    const rating = document.querySelector('input[name="rating"]:checked')?.value;
+    const comments = document.getElementById('comments').value.trim();
+
+    // ✅ Fixed regex (single backslash \s)
+    if (name.length < 3) return false;
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return false;
+    if (!event) return false;
+    if (!rating || rating < 1 || rating > 5) return false;
+    if (comments.length < 10) return false;
+    return true;
+  }
+
+  function saveToLocalStorage() {
+    const feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
+    feedbacks.push({
+      name: document.getElementById('name').value.trim(),
+      email: document.getElementById('email').value.trim(),
+      event: document.getElementById('event').value,
+      rating: document.querySelector('input[name="rating"]:checked').value,
+      comments: document.getElementById('comments').value.trim()
+    });
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+  }
+
+  function showMessage(msg, color) {
+    message.textContent = msg;
+    message.style.color = color;
+    setTimeout(() => message.textContent = '', 3000);
+  }
+
+  // View Page logic
+  const table = document.getElementById('feedbackTable');
+  const searchInput = document.getElementById('search');
+  const noData = document.getElementById('noData');
+
+  searchInput.addEventListener('input', loadFeedbacks);
+
+  function loadFeedbacks() {
+    const feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
+    const query = searchInput.value.toLowerCase();
+    const filtered = feedbacks.filter(f =>
+      f.name.toLowerCase().includes(query) || f.event.toLowerCase().includes(query)
+    );
+    renderTable(filtered);
+  }
+
+  function deleteFeedback(index) {
+    const feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
+    feedbacks.splice(index, 1);
+    localStorage.setItem('feedbacks', JSON.stringify(feedbacks));
+    loadFeedbacks();
+  }
+
+  function renderTable(data) {
+    table.innerHTML = '';
+    if (data.length === 0) {
+      noData.textContent = 'No feedback found';
+      return;
+    }
+    noData.textContent = '';
+    data.forEach((fb, idx) => {
+      const row = document.createElement('tr');
+      row.innerHTML = `
+        <td>${fb.name}</td>
+        <td>${fb.email}</td>
+        <td>${fb.event}</td>
+        <td>${fb.rating}</td>
+        <td>${fb.comments}</td>
+        <td><button onclick="(${deleteFeedback})(${idx})">Delete</button></td>
+      `;
+      table.appendChild(row);
+    });
+  }
+})();
+</script>
+</body>
+</html>
