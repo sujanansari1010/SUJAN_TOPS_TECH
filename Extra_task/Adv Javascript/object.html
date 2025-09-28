@@ -1,0 +1,56 @@
+<script>
+    /*
+JavaScript Objects
+A javaScript object is an entity having state and behavior (properties and method). 
+For example: car, pen, bike, chair, glass, keyboard, monitor etc.
+
+JavaScript is an object-based language. Everything is an object in JavaScript.
+
+JavaScript is template based not class based. Here, we don't create class to 
+get the object. But, we direct create objects.
+
+Creating Objects in JavaScript
+There are 3 ways to create objects.
+
+
+1)By object literal
+
+2)By creating instance of Object directly (using new keyword)
+3)By using an object constructor (using new keyword)
+
+
+*/
+
+
+// single object
+
+var single_obj={id:102,name:"Shyam Kumar",salary:40000};
+document.write(single_obj.id+" "+single_obj.name+" "+single_obj.salary + "<br>");
+
+for(property in single_obj)
+{
+    document.write(single_obj[property] + "<br>");
+}
+
+
+
+
+// Multi object
+var multi_obj=[
+    {id:101,name:"Shyam Kumar",salary:40000},
+    {id:101,name:"ram Kumar",salary:70000},
+    {id:101,name:"raju Kumar",salary:50000},
+    
+]
+
+document.write(multi_obj[0].id+" "+multi_obj[1].name+" "+multi_obj[2].salary + "<br>");
+
+for (value of multi_obj)
+{
+    document.write(value.id+" "+value.name+" "+value.salary + "<br>");          
+}
+
+
+
+    
+</script>

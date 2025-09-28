@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Feedback App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input,
+        select,
+        textarea,
+        button {
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            cursor: pointer;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+        }
+
+        .message {
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        .success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .error {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        input[type="text"].search {
+            margin-bottom: 10px;
+        }
+
+        button.delete-btn {
+            background: red;
+            color: #fff;
+            border: none;
+            padding: 4px 8px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        .no-feedback {
+            margin-top: 10px;
+            color: red;
+            text-align: center;
+        }
+
+        @media (max-width: 500px) {
+
+            input,
+            select,
+            textarea,
+            button {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Customer Feedback Form</h2>
+        <form id="feedbackForm">
+            <div class="form-group">
+                <label for="name">Attendee Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="event">Event Attended</label>
+                <select id="event" name="event" required>
+                    <option value="">Select Event</option>
+                    <option value="Webinar">Webinar</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Meetup">Meetup</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Rating</label>
+                <select id="rating" name="rating" required>
+                    <option value="">Select Rating</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments</label>
+                <textarea id="comments" name="comments" rows="4" required></textarea>
+            </div>
+            <button type="submit">Submit Feedback</button>
+            <div id="formMessage" class="message"></div>
+        </form>
+
+        <h2>Feedback List</h2>
+        <input type="text" id="searchInput" class="search" placeholder="Search by Name or Event">
+        <table id="feedbackTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Event</th>
+                    <th>Rating</th>
+                    <th>Comments</th>
+                    <th>Date</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="noFeedback" class="no-feedback"></div>
+    </div>
+
+    <script>
+        class FeedbackFormHandler {
+            constructor(formId, messageId) {
+                this.form = document.getElementById(formId);
+                this.messageDiv = document.getElementById(messageId);
+                this.feedbacks = JSON.parse(localStorage.getItem('feedbacks') || '[]');
+                this.tableBody = document.querySelector('#feedbackTable tbody');
+                this.noFeedbackDiv = document.getElementById('noFeedback');
+                this.searchInput = document.getElementById('searchInput');
+                this.init();
+                this.renderTable(this.feedbacks);
+            }
+
+            init() {
+                this.form.addEventListener('submit', e => {
+                    e.preventDefault();
+                    this.handleSubmit();
+                });
+                this.form.addEventListener('input', e => this.validateField(e.target));
+                this.form.addEventListener('blur', e => this.validateField(e.target), true);
+                this.searchInput.addEventListener('input', () => this.handleSearch());
+            }
+
+            validateField(field) {
+                const { name, value } = field;
+                let valid = true, error = '';
+                switch (name) {
+                    case 'name': if (value.trim().length < 3) { valid = false; error = 'Name must be ≥ 3 characters'; } break;
+                    case 'email': if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) { valid = false; error = 'Invalid email format'; } break;
+                    case 'event': if (!value) { valid = false; error = 'Please select an event'; } break;
+                    case 'rating': if (!(value >= 1 && value <= 5)) { valid = false; error = 'Rating must be 1-5'; } break;
+                    case 'comments': if (value.trim().length < 10) { valid = false; error = 'Comments must be ≥ 10 characters'; } break;
+                }
+                if (!valid) this.showMessage(error, 'error');
+                return valid;
+            }
+
+            validateForm() {
+                const fields = ['name', 'email', 'event', 'rating', 'comments'];
+                return fields.every(f => this.validateField(this.form[f]));
+            }
+
+            saveToLocalStorage() {
+                const newFeedback = {
+                    name: this.form.name.value,
+                    email: this.form.email.value,
+                    event: this.form.event.value,
+                    rating: this.form.rating.value,
+                    comments: this.form.comments.value,
+                    date: new Date().toLocaleString()
+                };
+                this.feedbacks.push(newFeedback);
+                localStorage.setItem('feedbacks', JSON.stringify(this.feedbacks));
+            }
+
+            clearForm() { this.form.reset(); }
+
+            showMessage(msg, type) {
+                this.messageDiv.textContent = msg;
+                this.messageDiv.className = `message ${type}`;
+                setTimeout(() => { this.messageDiv.textContent = ''; this.messageDiv.className = 'message'; }, 3000);
+            }
+
+            handleSubmit() {
+                if (this.validateForm()) {
+                    this.saveToLocalStorage();
+                    this.showMessage('Feedback submitted successfully!', 'success');
+                    this.clearForm();
+                    this.renderTable(this.feedbacks);
+                } else {
+                    this.showMessage('Please fix errors before submitting.', 'error');
+                }
+            }
+
+            renderTable(data) {
+                this.tableBody.innerHTML = '';
+                if (data.length === 0) { this.noFeedbackDiv.textContent = 'No feedback found.'; return; }
+                else { this.noFeedbackDiv.textContent = ''; }
+                data.forEach((f, index) => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+        <td>${f.name}</td>
+        <td>${f.email}</td>
+        <td>${f.event}</td>
+        <td>${f.rating}</td>
+        <td>${f.comments}</td>
+        <td>${f.date}</td>
+        <td><button class="delete-btn" data-index="${index}">Delete</button></td>
+      `;
+                    this.tableBody.appendChild(row);
+                });
+                this.tableBody.querySelectorAll('.delete-btn').forEach(btn => {
+                    btn.addEventListener('click', e => this.deleteFeedback(e.target.dataset.index));
+                });
+            }
+
+            handleSearch() {
+                const query = this.searchInput.value.toLowerCase();
+                const filtered = this.feedbacks.filter(f => f.name.toLowerCase().includes(query) || f.event.toLowerCase().includes(query));
+                this.renderTable(filtered);
+            }
+
+            deleteFeedback(index) {
+                this.feedbacks.splice(index, 1);
+                localStorage.setItem('feedbacks', JSON.stringify(this.feedbacks));
+                this.renderTable(this.feedbacks);
+            }
+        }
+
+        new FeedbackFormHandler('feedbackForm', 'formMessage');
+    </script>
+</body>
+
+</html>
