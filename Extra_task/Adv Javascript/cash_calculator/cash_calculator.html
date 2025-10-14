@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cash Counter Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e1f3ec;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #2a6f4e;
+        margin-bottom: 25px;
+        letter-spacing: 1px;
+    }
+
+    table {
+        margin: 20px auto;
+        border-collapse: separate;
+        border-spacing: 20px 12px;
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+        padding: 10px 20px;
+    }
+
+    td {
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    img {
+        width: 140px;
+        height: 65px;
+        border-radius: 8px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    input[type="number"] {
+        width: 100px;
+        padding: 10px;
+        font-size: 17px;
+        text-align: center;
+        border: 2px solid #4CAF50;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+    }
+
+    input[type="number"]:focus {
+        border-color: #1f7a5a;
+        background-color: #f4fff8;
+        box-shadow: 0 0 8px rgba(46, 204, 113, 0.5);
+    }
+
+    .equal {
+        font-weight: bold;
+        font-size: 22px;
+        color: #2a6f4e;
+        padding: 0 15px;
+    }
+
+    td:last-child {
+        font-weight: bold;
+        font-size: 18px;
+        color: #333;
+        min-width: 80px;
+    }
+
+    .total-box {
+        margin-top: 25px;
+        background: #cde6dd;
+        padding: 15px;
+        border-radius: 10px;
+        width: 60%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .amount-words {
+        background: #d9f0d5;
+        margin: 20px auto;
+        padding: 12px;
+        width: 60%;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+</style>
+</head>
+<body>
+
+<h1>💰 Cash Counter Calculator 💰</h1>
+
+<table>
+    <tr>
+        <td><img src="500.jpg" alt="500"></td>
+        <td><input type="number" id="n500" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r500">0</td>
+    </tr>
+    <tr>
+        <td><img src="200.jpg" alt="200"></td>
+        <td><input type="number" id="n200" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r200">0</td>
+    </tr>
+    <tr>
+        <td><img src="100.png" alt="100"></td>
+        <td><input type="number" id="n100" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r100">0</td>
+    </tr>
+    <tr>
+        <td><img src="50.jpg" alt="50"></td>
+        <td><input type="number" id="n50" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r50">0</td>
+    </tr>
+    <tr>
+        <td><img src="20.jpg" alt="20"></td>
+        <td><input type="number" id="n20" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r20">0</td>
+    </tr>
+    <tr>
+        <td><img src="10.jpg" alt="10"></td>
+        <td><input type="number" id="n10" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r10">0</td>
+    </tr>
+    <tr>
+        <td><img src="5.jpg" alt="5"></td>
+        <td><input type="number" id="n5" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r5">0</td>
+    </tr>
+    <tr>
+        <td><img src="2.jpg" alt="2"></td>
+        <td><input type="number" id="n2" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r2">0</td>
+    </tr>
+    <tr>
+        <td><img src="1.jpg" alt="1"></td>
+        <td><input type="number" id="n1" value="" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r1">0</td>
+    </tr>
+</table>
+
+<div class="total-box" id="totalCash">Total Cash: 0</div>
+<div class="total-box" id="totalNotes">Total Notes: 0</div>
+<div class="amount-words" id="amountWords">Zero Only!</div>
+
+<script>
+function calculate() {
+    const notes = {
+        500: +document.getElementById("n500").value || 0,
+        200: +document.getElementById("n200").value || 0,
+        100: +document.getElementById("n100").value || 0,
+        50: +document.getElementById("n50").value || 0,
+        20: +document.getElementById("n20").value || 0,
+        10: +document.getElementById("n10").value || 0,
+        5: +document.getElementById("n5").value || 0,
+        2: +document.getElementById("n2").value || 0,
+        1: +document.getElementById("n1").value || 0
+    };
+
+    let totalCash = 0, totalNotes = 0;
+
+    for (let val in notes) {
+        let amount = notes[val] * val;
+        totalCash += amount;
+        totalNotes += notes[val];
+        document.getElementById("r" + val).innerText = amount;
+    }
+
+    document.getElementById("totalCash").innerText = "Total Cash: ₹" + totalCash.toLocaleString();
+    document.getElementById("totalNotes").innerText = "Total Notes: " + totalNotes;
+    document.getElementById("amountWords").innerText = numberToWords(totalCash) + " Only!";
+}
+
+function numberToWords(num) {
+    if (num === 0) return "Zero";
+    const a = ["", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", 
+               "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", 
+               "Seventeen", "Eighteen", "Nineteen"];
+    const b = ["", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"];
+
+    const inWords = (n) => {
+        if (n < 20) return a[n];
+        if (n < 100) return b[Math.floor(n / 10)] + (n % 10 ? " " + a[n % 10] : "");
+        if (n < 1000) return a[Math.floor(n / 100)] + " Hundred" + (n % 100 ? " and " + inWords(n % 100) : "");
+        if (n < 100000) return inWords(Math.floor(n / 1000)) + " Thousand" + (n % 1000 ? " " + inWords(n % 1000) : "");
+        if (n < 10000000) return inWords(Math.floor(n / 100000)) + " Lakh" + (n % 100000 ? " " + inWords(n % 100000) : "");
+        return "Number too large";
+    };
+
+    return inWords(num);
+}
+</script>
+</body>
+</html>

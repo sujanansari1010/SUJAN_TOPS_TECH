@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cash Counter Calculator</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #e1f3ec;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        color: #2a6f4e;
+    }
+
+    table {
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #ccc;
+    }
+
+    td {
+        padding: 10px;
+        text-align: center;
+    }
+
+    input[type="number"] {
+        width: 80px;
+        padding: 8px;
+        font-size: 16px;
+        text-align: center;
+        border: 2px solid #3399ff;
+        border-radius: 6px;
+        outline: none;
+    }
+
+    .equal {
+        font-weight: bold;
+        color: #2a6f4e;
+    }
+
+    .total-box {
+        margin-top: 20px;
+        background: #cde6dd;
+        padding: 15px;
+        border-radius: 8px;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .amount-words {
+        background: #d9f0d5;
+        margin: 15px auto;
+        padding: 10px;
+        width: 50%;
+        border-radius: 8px;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    img {
+        width: 100px;
+        height: auto;
+    }
+</style>
+</head>
+<body>
+
+<h1>💰 Cash Counter Calculator 💰</h1>
+
+<table>
+    <tr>
+        <td><img src="500.j"></td>
+        <td><input type="number" id="n2000" value="0" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r2000">0</td>
+    </tr>
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/Indian_500_Rupees%2C_Mahatma_Gandhi_New_Series%2C_2016.jpg" alt="500"></td>
+        <td><input type="number" id="n500" value="0" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r500">0</td>
+    </tr>
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/d/d8/India_new_200_INR%2C_Mahatma_Gandhi_New_Series%2C_2017%2C_obverse.jpg" alt="200"></td>
+        <td><input type="number" id="n200" value="0" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r200">0</td>
+    </tr>
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/India_new_100_INR%2C_Mahatma_Gandhi_New_Series%2C_2018%2C_obverse.jpg" alt="100"></td>
+        <td><input type="number" id="n100" value="0" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r100">0</td>
+    </tr>
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/f/f3/India_new_50_INR%2C_Mahatma_Gandhi_New_Series%2C_2017%2C_obverse.jpg" alt="50"></td>
+        <td><input type="number" id="n50" value="0" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r50">0</td>
+    </tr>
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/1/1a/India_new_20_INR%2C_Mahatma_Gandhi_New_Series%2C_2019%2C_obverse.jpg" alt="20"></td>
+        <td><input type="number" id="n20" value="0" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r20">0</td>
+    </tr>
+    <tr>
+        <td><img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/India_new_10_INR%2C_Mahatma_Gandhi_New_Series%2C_2018%2C_obverse.jpg" alt="10"></td>
+        <td><input type="number" id="n10" value="0" min="0" oninput="calculate()"></td>
+        <td class="equal">=</td>
+        <td id="r10">0</td>
+    </tr>
+</table>
+
+<div class="total-box" id="totalCash">Total Cash: 0</div>
+<div class="total-box" id="totalNotes">Total Notes: 0</div>
+<div class="amount-words" id="amountWords">Zero Only!</div>
+
+<script>
+function calculate() {
+    const notes = {
+        2000: document.getElementById("n2000").value || 0,
+        500: document.getElementById("n500").value || 0,
+        200: document.getElementById("n200").value || 0,
+        100: document.getElementById("n100").value || 0,
+        50: document.getElementById("n50").value || 0,
+        20: document.getElementById("n20").value || 0,
+        10: document.getElementById("n10").value || 0
+    };
+
+    let totalCash = 0, totalNotes = 0;
+    for (let val in notes) {
+        let amount = notes[val] * val;
+        totalCash += amount;
+        totalNotes += parseInt(notes[val]);
+        document.getElementById("r" + val).innerText = amount;
+    }
+
+    document.getElementById("totalCash").innerText = "Total Cash: " + totalCash.toLocaleString();
+    document.getElementById("totalNotes").innerText = "Total Notes: " + totalNotes;
+    document.getElementById("amountWords").innerText = numberToWords(totalCash) + " Only!";
+}
+
+function numberToWords(num) {
+    if (num === 0) return "Zero";
+    const a = ["", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine", "ten", 
+               "eleven", "twelve", "thirteen", "fourteen", "fifteen", "sixteen", 
+               "seventeen", "eighteen", "nineteen"];
+    const b = ["", "", "twenty", "thirty", "forty", "fifty", "sixty", "seventy", "eighty", "ninety"];
+
+    const inWords = (n) => {
+        if (n < 20) return a[n];
+        if (n < 100) return b[Math.floor(n / 10)] + (n % 10 ? " " + a[n % 10] : "");
+        if (n < 1000) return a[Math.floor(n / 100)] + " hundred" + (n % 100 ? " and " + inWords(n % 100) : "");
+        if (n < 100000) return inWords(Math.floor(n / 1000)) + " thousand" + (n % 1000 ? " " + inWords(n % 1000) : "");
+        if (n < 10000000) return inWords(Math.floor(n / 100000)) + " lakh" + (n % 100000 ? " " + inWords(n % 100000) : "");
+        return "Number too large";
+    };
+
+    return inWords(num);
+}
+</script>
+</body>
+</html>
