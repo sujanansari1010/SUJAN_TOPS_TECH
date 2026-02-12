@@ -1,0 +1,27 @@
+javascript is programming language used to validate data and to manipulate data...
+
+javascript is only language which is used on both the server-side & client side...
+
+javascript is used in frontend(React.js) & in Backend(Node.js)...
+
+Html is used to create structure of website and CSS is used to give style and javascript is used to give behavior or how the things will works...
+
+Also JavaScript is text-based scripting language means when we run this code it gives result line by line code...
+
+---> Before going coding we should properly know how things work in js
+
+-> we should remember 3 steps before doing code in js
+
+-> 1) value : can be anything 
+ex :  100	106.20	  Irfan	   true	    java
+
+2) variable :the name that given to the value 
+
+a=100
+b=100.20
+
+-1st letter must be always character ex : a1 
+- special character does not allow 
+- according to content 
+
+3) data type 

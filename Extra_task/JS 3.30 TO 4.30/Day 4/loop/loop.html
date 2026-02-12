@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Number" id="n1">
+    
+
+    <button onclick="inc()">Increment</button>
+    <button onclick="dec()">Decrement</button>
+
+
+    <script>
+        
+        function inc()
+        {
+            let n1=parseInt(document.getElementById("n1").value);
+            let i=1;  //start
+
+            while(i>=n1)  //condition
+             {
+                console.log(i);
+                i+=1
+             }
+        }
+        
+
+         function dec()
+        {
+            let n1=parseInt(document.getElementById("n1").value);
+            let i=n1;  //start
+
+            while(i<=1)  //condition
+             {
+                console.log(i);
+                i-=1
+             }
+        }
+    </script>
+</body>
+</html>

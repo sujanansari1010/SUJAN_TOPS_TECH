@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = [56, 24, 78, 32, 21]
+        let i, j, temp;
+        
+
+        for (i = 0; i < 5; i++)
+         {
+            for (j = i + 1; j < 5; j++) 
+            {
+                
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+               
+            }
+        }
+
+        for (i = 0; i < 5; i++) {
+            document.write("reverse order ", a[i] + "<br>")
+        }
+    </script>
+</body>
+
+</html>

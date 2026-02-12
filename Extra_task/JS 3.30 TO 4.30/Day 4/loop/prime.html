@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="n1" placeholder="Enter Number">
+    <button onclick="prime(document.getElementById('n1').value)">Sumbit</button>
+
+    <script>
+        function prime(n) 
+        {
+            let i=1,prime1=0;
+            //5%1
+            while(i<=n)
+            {
+                if (n%i==0)
+                {
+                    prime1++;
+                }
+
+                i++;
+            }
+            if(prime1==2)
+            {
+                console.log("Prime!!")
+            }
+
+            else
+            {
+                console.log("Not prime!!")
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

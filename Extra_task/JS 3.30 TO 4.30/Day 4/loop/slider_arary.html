@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .main{
+            height: 500px;
+            width: 100%;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <img src="img1.jpg.jpg" alt="" height="100%" width="100%" class="img">
+        <img src="img2.jpg.jpg" alt="" height="100%" width="100%" class="img">
+        <img src="img3.jpg.jpg" alt="" height="100%" width="100%" class="img">
+    </div>
+
+    <button>Change img</button>
+
+    <button>back img</button>
+
+    <script>
+        let img_tag = document.getElementsByClassName("img")
+        console.log(img_tag)
+
+        index = 0
+
+        function slider()
+        {
+            for(let i=0;i<img_tag.length;i++)
+            {
+                console.log(img_tag[i])
+                img_tag[i].style.display = "none"
+            }
+            img_tag[index].style.display = "block"
+
+            index++;
+
+            //index 3 ==>1
+            if(index == 4){
+                index = 0
+            }
+
+            //auto
+            setTimeout("slider()",2000)
+        }
+        slider()
+    </script>
+</body>
+</html>

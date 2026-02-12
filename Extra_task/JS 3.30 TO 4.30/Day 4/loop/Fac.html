@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Enter Number" id="n1">
+    <button onclick="rev()">Submit</button>
+
+    <script>
+        // function fac()
+        // {
+        //     let n1 = document.getElementById("n1").value;
+        //     let i=1;
+        //     let fact=0;
+        //     while(i<=n100)
+        //     {
+        //        fact1=fact+i;
+        //        //1*1 = 1 1*2=2 2*3=6 6*4=24 24*5=120
+        //        i+=1 
+        //     }
+        //     console.log(fact1);
+        // }
+
+        //1768 8671
+
+        function rev()
+        {
+            let n1 = document.getElementById("n1").value;
+            let n2=n1;
+            let rem=0;
+            let rev=0;
+            while(n1!=0)
+            {
+                rem=n1%10;  //1768%10 = 176.8  17.6  1.7
+                rev=rev*10+rem;  //0+8 = 8  80+6=86  860+7 = 86
+                n1 = Math.floor(n1/10);  // 176 17
+            }
+
+            if(n2==rev)
+            {
+                console.log("Palindrome!!");
+
+            }
+            else
+            {
+                console.log("Not Palindrom!!");
+            }
+        }
+    </script>
+</body>
+</html>

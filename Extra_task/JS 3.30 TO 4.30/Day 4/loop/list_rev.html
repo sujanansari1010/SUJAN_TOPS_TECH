@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         
+         let a=[56,24,21,16,11]
+         let left = 0
+         let right = a.length-1
+         let temp;
+         while(left<right)
+         {
+            temp = a[left];
+            a[left]=a[right];
+            a[right]=temp;
+
+            left+=1
+            right-=1
+
+         }
+
+         console.log(a)
+    </script>
+</body>
+</html>

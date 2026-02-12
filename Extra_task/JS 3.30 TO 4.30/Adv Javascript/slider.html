@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="img1.jpg.jpg" alt="" height="400px" id="image" width="500px" style="object-fit: cover;">
+    <button onclick="slider()">Next Image</button>
+    <button onclick="slider()">Back Image</button>
+    <script>
+        function slider()
+        {
+            let img_tag = document.getElementById("image")
+            console.log(img_tag.src)
+
+            if (img_tag.src.match('img1.jpg.jpg'))
+            {
+                img_tag.src = "img2.jpg.jpg";
+            }
+            else if(img_tag.src.match('img2.jpg.jpg'))
+            {
+                img_tag.src = "img3.jpg.jpg";
+            }
+            else if(img_tag.src.match('img3.jpg.jpg'))
+            {
+                img_tag.src = "img1.jpg.jpg";
+            }
+            else
+            {
+                img_tag.src = "img1.jpg.jpg";
+            }
+        }
+
+        setTimeout("slider()",3000)
+    </script>
+</body>
+</html>

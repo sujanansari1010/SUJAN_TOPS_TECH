@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="">
+        <input type="text" placeholder="Enter Name" id="name" onkeyup="return check_pat()">
+        <button onclick="return check_blank()">Submit</button>
+        <br>
+        <span id="msg"></span>
+    </form>
+    <script>
+        function check_blank()
+        {
+            let fname = document.getElementById("name").value;
+
+            if (fname=="" || fname==null)
+            {
+                document.getElementById("msg").innerText="Please enter name!!"
+                return false;
+            }
+        }
+
+        function check_pat()
+        {
+            let fname = document.getElementById("name").value;
+
+            let reg = /^[a-zA-Z]*$/
+            
+            if(reg.test(fname))
+            {
+              document.getElementById("msg").innerText="";
+              return false;  
+            }
+            else
+            {
+                document.getElementById("msg").innerText="Number not allowed!!";
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

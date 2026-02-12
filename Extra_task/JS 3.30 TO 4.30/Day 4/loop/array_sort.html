@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let a = [56, 24, 78, 32, 21]
+        let i, j, temp;
+        // ans = [21,24,32,56,78]
+
+        for (i = 0; i < 5; i++) {
+            for (j = i + 1; j < 5; j++) 
+            {
+                if (a[i] > a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+
+        for (i = 0; i < 5; i++) {
+            document.write("Assending order ", a[i] + "<br>")
+        }
+
+        // a=10  b=20
+
+
+        // temp=a  temp=10  a=blank
+        // a=b     a=20  b=blank
+        // b=temp  b=10  temp=blank
+
+
+
+        //a=a+b    10+20   a=30
+        //b=a-b    30-20   b=10
+        //a=a-b    30-10   a=20
+    </script>
+</body>
+
+</html>

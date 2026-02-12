@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number"  id="n1">
+    <button onclick="console.log(fac())">Sumbit</button>
+    <script>
+        //function without para with return value
+
+        function fac()
+        {
+            let n=document.getElementById("n1").value;
+            let i;
+            let fact=1;
+            for(i=1;i<=n;i++)
+            {
+                fact=fact*i;
+            }
+            return fact
+        }
+    </script>
+</body>
+</html>
