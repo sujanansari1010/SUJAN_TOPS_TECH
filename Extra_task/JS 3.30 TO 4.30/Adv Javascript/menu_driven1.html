@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter choice" id="n1">
+    <button type="submit" onclick="hello()">Submit</button>
+    <script>
+
+        function hello()
+        {
+            while (true){
+                console.log("press 1 for Prime number!!")
+                console.log("press 2 for Fac")
+                console.log("press 3 for Rev number")
+                console.log("press 4 for Exit")
+
+                let choice = document.getElementById("n1").value;
+
+                if(choice==1)
+                {
+                    console.log("prime!!");
+                }
+                else if(choice==2)
+                {
+                    console.log("Factorial!!");
+                }
+                else if(choice==3)
+                {
+                    console.log("Revers Number");
+                }
+                else if(choice==4)
+                {
+                    console.log(thanks your choice);
+
+                }
+                else(invalid choice);
+                {
+                    
+                }
+            }
+        }
+    </script>
+</body>
+</html>
