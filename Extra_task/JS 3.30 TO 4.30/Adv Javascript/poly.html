@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class A{
+
+            fun1()
+            {
+                console.log("Method 1!!")
+            }
+        }
+
+        class B extends A{
+
+            fun1()
+            {
+                super.fun1()
+                console.log("Method 2!!")
+            }
+        }
+
+        class C extends B{
+
+            fun1()
+            {
+                super.fun1()
+                console.log("Method 3!!")
+            }
+        }
+
+        obj = new C()
+        obj.fun1()
+    </script>
+</body>
+</html>
