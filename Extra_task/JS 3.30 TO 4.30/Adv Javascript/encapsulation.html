@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Encaps{
+            hello1()
+            {
+                let a=10;
+                let b=50;
+                this.a=a;
+                this.b=b;
+            }
+
+            hello2()
+            {
+                console.log("Hello2")
+            }
+            hello3()
+            {
+                console.log(this.a);
+                console.log(this.b);
+            }
+
+        }
+        obj = new Encaps()
+        obj.hello1()
+        obj.hello2()
+        obj.hello3()
+    </script>
+</body>
+</html>

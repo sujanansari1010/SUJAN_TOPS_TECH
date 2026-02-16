@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bank System</title>
+</head>
+<body>
+    <button onclick="start()">Start Bank Program</button>
+   <script>
+class Bank {
+    constructor(){
+        this.bal = 0;
+    }
+
+    ac_open(){
+        let name = prompt("Enter Your Name:");
+        this.bal = 5000;
+        alert("Account opened for " + name);
+        alert("Your balance is: " + this.bal);
+    }
+
+    depo(){
+        let deposit = Number(prompt("Enter Deposit Amount:"));
+        this.bal += deposit;
+        alert("Deposit successful!");
+    }
+
+    withdraw(){
+        let withd = Number(prompt("Enter Withdraw Amount:"));
+        if (withd > this.bal){
+            alert("Insufficient balance!");
+        }
+        else{
+            this.bal -= withd;
+            alert("Withdraw successful!");
+        }
+    }
+
+    check_bal(){
+        alert("Your Balance is: " + this.bal);
+    }
+}
+
+function start(){
+    let obj = new Bank();
+
+    while(true){
+        let choice = Number(prompt("Press 1 for Account Opening\nPress 2 for Exit"));
+
+        if (choice == 1){
+            obj.ac_open();
+
+            while(true){
+                let choice1 = Number(prompt(
+                    "Press 1 for Deposit\n" +
+                    "Press 2 for Withdraw\n" +
+                    "Press 3 for Check Balance\n" +
+                    "Press 4 for Exit"
+                ));
+
+                if(choice1 == 1){
+                    obj.depo();
+                }
+                else if(choice1 == 2){
+                    obj.withdraw();
+                }
+                else if(choice1 == 3){
+                    obj.check_bal();
+                }
+                else if(choice1 == 4){
+                    alert("Thank you!");
+                    break;
+                }
+                else{
+                    alert("Invalid choice!");
+                }
+            }
+        }
+        else if(choice == 2){
+            alert("Thank you!");
+            break;
+        }
+        else{
+            alert("Invalid choice!");
+        }
+    }
+}
+</script>
+
+</body>
+</html>
