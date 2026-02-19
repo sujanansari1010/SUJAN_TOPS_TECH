@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //Construtor :
+        // is a special method that call itself when object is created
+
+        //3)types 
+        //1)default construtor
+        //2)parametrised
+        //3)copy
+
+        class My{
+            constructor(a)
+            {
+                console.log("Yes constructor!!");
+
+                alert(`Constructor called! : ${a}`)
+            }
+            method1()
+            {
+                console.log("Method 1!!")
+            }
+        }
+
+        obj = new My(10)
+        obj.method1()
+    </script>
+</body>
+</html>

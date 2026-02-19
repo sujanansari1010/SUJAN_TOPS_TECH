@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //rest function as parameter
+        // yeh tab use karte hai jab hame pata na ho ki kitne parameter hai
+        //simple agar bahot saare ho parameter toh bs three dote aise "(...)"  kardo phir jitne hinge un sabka sum hokar aajaiga
+        //you can see example here
+        function test(...mahi){
+            let sum = 0
+            for(let dhoni in mahi){
+                sum = sum + mahi[dhoni]
+            }
+            return sum
+        }
+        console.log(test(10,20,30,40,50,60))
+    </script>
+</body>
+</html>
