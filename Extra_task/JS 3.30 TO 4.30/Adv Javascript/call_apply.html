@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+        let data = {
+            fullname : function(city,country){
+                console.log("firstname => ",this.firstname,", lastname => ",this.lastname,", city =>", city,", county=> ",country)        
+            }
+        }
+
+        let person = {
+            firstname : "brijesh",
+            lastname : "Patel"
+        }
+
+        let person2 = {
+            firstname : "Himani",
+            lastname : "patel"
+        }
+
+        // call method object connect funtion , arugement spreate
+        data.fullname.call(person,"surat","india")
+
+        // apply method object connect function , arugment as array
+        data.fullname.apply(person2,["ahmedabad","india"])
+
+       
+
+    </script>
+</body>
+</html>
