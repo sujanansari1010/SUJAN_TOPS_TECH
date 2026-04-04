@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        fetch("data.txt",{
+            //get bu defult
+        method :"GET"    
+        })
+        .then((res)=>{
+            //convert string
+            return res.text()
+
+        })
+        .then((res)=>{
+            console.log(res)
+            document.write(res)
+        })
+    </script>
+</body>
+</html>

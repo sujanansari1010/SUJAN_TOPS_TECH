@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+
+    <!-- In Javascript , async and await are keywords used to handle asynchronous operations more cleanly than traditional promises or callbacks  -->
+    
+    <!-- axios :- back-end read format -->
+
+    <script>
+
+        const getdata = async()=>{
+            const res = await axios.get("https://jsonplaceholder.typicode.com/users")
+            console.log(res)
+            console.log(res.data)
+            res.data.map((user)=>{
+                console.log(user)
+            })
+        }
+        getdata()
+
+        // Creating new data 
+        let person = {
+            name : "vishu patel",
+            course : "Front-end",
+            state : "Gujarat",
+            mobile : "0101020202"
+        }
+        // Data created 
+        // Now we are adding this data 
+
+        const newdata = async()=>{
+            const res = axios.post("https://jsonplaceholder.typicode.com/post",person)
+            console.log(res.data)
+        }
+        newdata()
+
+        // Now let delete it with this method
+        const deletedata=async()=>{
+            const res=axios.delete(`https://jsonplaceholder.typicode.com/posts/1`)
+            console.log(res.data)
+        }
+        deletedata()
+
+        // Now let Create data to Update 
+
+        let person1 = {
+            id : 40,
+            name : "Himani patel",
+            course : "Front-end",
+            state  : "Gujarat",
+            mobile : "0101020202",
+            city : "Ahmedabad"
+        }
+
+        // Writing to update this data by " put "
+
+        const updatedata=async()=>{
+            const res = axios.put(`https://jsonplaceholder.typicode.com/posts/1`)
+            console.log(res.data)
+        } 
+        updatedata()
+    </script>
+
+</body>
+</html>

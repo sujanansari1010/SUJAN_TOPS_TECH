@@ -1,0 +1,17 @@
+class obj
+inheri
+arrow function                                      
+bank manag
+call apply
+call bake
+constructor
+destructuring array
+destructuring obj
+encapsulation obj
+menu driven
+poly to hirachical
+poly
+rest
+slider
+spread
+string ex
