@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Café Brew | Coffee Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="preloader" id="preloader">
+    <div class="loader"></div>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#home" class="brand">Café Brew</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="nav" id="mainNav">
+        <a href="#home">Home</a>
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">Light</button>
+        <button class="cart-btn" id="openCart" aria-label="Open cart">
+          Cart <span class="cart-badge" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-header">
+      <div>
+        <h3>Your Cart</h3>
+        <p class="cart-subtitle">Easy to add and remove items.</p>
+      </div>
+      <button class="close-cart" id="closeCart" aria-label="Close cart">×</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <p class="empty-cart">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer">
+      <span>Total</span>
+      <strong id="cartTotal">$0.00</strong>
+    </div>
+  </aside>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-overlay"></div>
+      <div class="container hero-content reveal">
+        <div class="hero-copy">
+          <p class="label">Premium coffee for every mood</p>
+          <h1>Welcome to Café Brew.</h1>
+          <p>Enjoy rich aromas, handcrafted espresso drinks, and a cozy place to relax or meet in the heart of the city.</p>
+          <div class="hero-actions">
+            <a href="#menu" class="btn btn-primary">Order Now</a>
+            <a href="#about" class="btn btn-secondary">View Story</a>
+          </div>
+        </div>
+        <div class="hero-card reveal">
+          <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="Coffee cup closeup" />
+          <div class="hero-card-info">
+            <span>Popular Blend</span>
+            <h2>Caramel Latte</h2>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section menu-section" id="menu">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Menu</span>
+          <h2>Choose your perfect cup.</h2>
+        </div>
+        <div class="card-grid" id="menuGrid">
+          <article class="menu-card reveal" data-id="espresso" data-name="Espresso" data-price="3.5">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Espresso" />
+            <div class="card-content">
+              <h3>Espresso</h3>
+              <p>Bold, robust, and perfect for espresso lovers.</p>
+              <div class="card-footer">
+                <span class="price">$3.50</span>
+                <button class="btn btn-tertiary add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="menu-card reveal" data-id="latte" data-name="Latte" data-price="4.75">
+            <img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=600&q=80" alt="Latte" />
+            <div class="card-content">
+              <h3>Latte</h3>
+              <p>Creamy espresso with silky steamed milk and foam art.</p>
+              <div class="card-footer">
+                <span class="price">$4.75</span>
+                <button class="btn btn-tertiary add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="menu-card reveal" data-id="cappuccino" data-name="Cappuccino" data-price="4.95">
+            <img src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?auto=format&fit=crop&w=600&q=80" alt="Cappuccino" />
+            <div class="card-content">
+              <h3>Cappuccino</h3>
+              <p>Rich espresso with velvety milk foam for a classic treat.</p>
+              <div class="card-footer">
+                <span class="price">$4.95</span>
+                <button class="btn btn-tertiary add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+          <article class="menu-card reveal" data-id="coldbrew" data-name="Cold Brew" data-price="5.25">
+            <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80" alt="Cold Brew" />
+            <div class="card-content">
+              <h3>Cold Brew</h3>
+              <p>Smooth, refreshing, and brewed slowly for a bold taste.</p>
+              <div class="card-footer">
+                <span class="price">$5.25</span>
+                <button class="btn btn-tertiary add-cart">Add to Cart</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about-section" id="about">
+      <div class="container about-grid">
+        <div class="about-image reveal">
+          <img src="https://images.unsplash.com/photo-1488758705236-5b30a24cedbd?auto=format&fit=crop&w=900&q=80" alt="Coffee shop interior" />
+        </div>
+        <div class="about-copy reveal">
+          <span class="section-label">About</span>
+          <h2>Handcrafted coffee, warm service, and a relaxed place to gather.</h2>
+          <p>Café Brew brings together premium beans, expert baristas, and a welcoming atmosphere. From morning espresso shots to afternoon meetups, our space is designed to feel like your favorite local café.</p>
+          <ul class="feature-list">
+            <li>Specialty beans from trusted roasters</li>
+            <li>Locally made pastries and light bites</li>
+            <li>Cozy seating, fast Wi-Fi, and friendly service</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery-section" id="gallery">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Gallery</span>
+          <h2>Beautiful coffee moments.</h2>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?auto=format&fit=crop&w=700&q=80" alt="Cappuccino closeup" /></div>
+          <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=700&q=80" alt="Coffee beans" /></div>
+          <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=700&q=80" alt="Cafe interior" /></div>
+          <div class="gallery-item reveal"><img src="https://images.unsplash.com/photo-1483683804023-6ccdb62f86ef?auto=format&fit=crop&w=700&q=80" alt="Latte art" /></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reviews-section" id="reviews">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label">Reviews</span>
+          <h2>What our customers say.</h2>
+        </div>
+        <div class="review-grid">
+          <article class="review-card reveal">
+            <p>"The best latte in town. Warm, friendly staff, cozy atmosphere, and amazing coffee."</p>
+            <div class="review-meta">
+              <strong>Anna S.</strong>
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+          </article>
+          <article class="review-card reveal">
+            <p>"Café Brew has the perfect vibe for working on a laptop or catching up with friends."</p>
+            <div class="review-meta">
+              <strong>Mark T.</strong>
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+          </article>
+          <article class="review-card reveal">
+            <p>"Their cold brew is smooth and refreshing. Highly recommend the pastries too."</p>
+            <div class="review-meta">
+              <strong>Sophia L.</strong>
+              <span>⭐⭐⭐⭐⭐</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-copy reveal">
+          <span class="section-label">Contact</span>
+          <h2>Reserve your table or send a message.</h2>
+          <p>Reach out for special orders, catering requests, or just to say hello.</p>
+        </div>
+        <form class="contact-form reveal" id="contactForm">
+          <label>
+            <span>Name</span>
+            <input type="text" name="name" placeholder="Your name" required />
+          </label>
+          <label>
+            <span>Email</span>
+            <input type="email" name="email" placeholder="you@example.com" required />
+          </label>
+          <label>
+            <span>Message</span>
+            <textarea name="message" rows="5" placeholder="Your message" required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <p class="form-note" id="formNote"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 Café Brew — premium coffee for your daily ritual.</p>
+      <div class="social-links">
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Twitter">TW</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

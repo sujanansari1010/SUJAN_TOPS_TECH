@@ -1,0 +1,12 @@
+.main{
+    background: linear-gradient(red,green,blue);
+    font-size: 25px;
+    padding: 30px;
+    color: white;
+    border: 5px solid;
+}
+#h1{
+    font-size: 50px;
+    background-color: red;
+    color: white;
+}
